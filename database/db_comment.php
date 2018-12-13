@@ -10,7 +10,7 @@ function insertComment($username,$content,$storyid){
 }
 function deleteComment($storyid,$commentid){
     $db= Database::instance()->db();
-    $stmt= $db->prepare('DELETE FROM Vote WHERE PostID = ? and CommentID=? and FatherCommentID is NULL');
+    $stmt= $db->prepare('DELETE FROM Vote WHERE PostID = ? and CommentID=? ');
     $stmt->execute(array($storyid,$commentid));
     //ainda não elimina os comentarios de todos os filho
     //TODO: eliminar comentarios dos filhos todos
