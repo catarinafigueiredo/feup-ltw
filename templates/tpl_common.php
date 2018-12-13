@@ -11,7 +11,7 @@
         <body>
             <header>
                 <h1><a href="inicialpage.php"><i class="fa fa-wikipedia-w"></i> Dabliu</a></h1>
-                <?php if($username == null){?>
+                <?php if($username != null){?>
                     <nav>
                         <nav>
                         <div class = "lista_css_container">
@@ -24,20 +24,21 @@
                                      <div class="dropdown-content">
                                         <a value ="Link 1" href ="personalspace.php">PersonalSpace</a>
                                         <a href ="signup.php">Settings</a>
-                                        <a href ="login.php">Log Out</a>
+                                        <a href ="../actions/action_logout.php">Log Out</a>
                                     </div>
                                 </div>    
                             </div>                  
                         </div>
                     </nav>
                <?php } ?>
-               <?php if($username != null){?>
+               <?php if($username == null){?>
                 <nav>
-                    <ul>
-                        <li> <a href="inicialpage.php">Página inicial</a></li>
-                        <li><a href="../actions/action_logout.php">Log out</a></li>
-                        <li><?=$username?></li>
-                    </ul>
+                    <div class = "lista_css_container">
+                        <div class = "lista_css">
+                            <div class = "buttons_test"><a href="inicialpage.php">Página inicial</a></div>
+                            <div class = "buttons_test"><a href="../actions/action_login.php">Log In</a></div>
+                        </div>
+                    </div>
                 </nav>
            <?php } ?>
                 

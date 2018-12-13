@@ -35,58 +35,61 @@
 
 <?php function draw_stories($stories){
     ?>
-<section id="storiese">
 
+<div class = "stories_css">
  <?php
   foreach ($stories as $story) {
    draw_story($story);
 } 
 ?>
-
-</section>
-
+</div>
 <?php } ?>
 
 <?php function draw_story($story){
     ?>
     <article class="story" >
-    
-        <header><h3><a href="../pages/story.php?story_id=<?=$story['postID']?>"><?=$story['Title']?></a></h3></header>
-       
-        <p>Category: <?=$story['CategoryName']?></p>
-        <p>Story by <?=$story['username']?></p>
-        <p><?=$story['Dados']?></p>
-        
-        <div class="vote-section">
-            <div id="votesUp<?=$story['postID']?>" >
-                <a href="#votesUp<?=$story['postID']?>">Jump Aqui </a>
-                <a href="../api/vote.php?story_id=<?=$story['postID']?>&type=up">
-                <i class="fa fa-thumbs-o-up"></i>
-                </a>
-            </div>
-            <div class="votesDown<?=$story['postID']?>">
-                <a href="#votesDown<?=$story['postID']?>">Jump Aqui </a>
-                <a href="../api/vote.php?story_id=<?=$story['postID']?>&type=down">
-                <i class="fa  fa-thumbs-o-down"></i>
-                </a>
-            </div>
-        
-            <p><?=$story['up']-$story['down']?></p>
+        <div class = "story_header">
+            <span><?=$story['CategoryName']?></span>
+            <span style="color: #808080;">Posted by <?=$story['username']?></span>
+        </div>
 
+        <div class = "story_content">
+            <header><h3><a href="../pages/story.php?story_id=<?=$story['postID']?>"><?=$story['Title']?></a></h3></header>
+            
+            <p><?=$story['Dados']?></p>
         </div>
-        <div id='comments'>
-                <a href="../pages/story.php?story_id=<?=$story['postID']?>">
-                <i class="fa fa-comment"></i>
-                </a>
-        </div>
-        <?php if(checkIfUserisLogged($_SESSION['username'],$story['username'])){
-            ?>
-            <div class="trash can">
-                <a href="../api/delete_story.php?story_id=<?=$story['postID']?>">
-                <i class="fa fa-trash"></i>
-                </a>
+        <div class = "story_footer">
+            <div class="vote-section">
+                <div id="votesUp<?=$story['postID']?>" >
+                    <a href="#votesUp<?=$story['postID']?>">Jump Aqui </a>
+                    <a href="../api/vote.php?story_id=<?=$story['postID']?>&type=up">
+                    <i class="fa fa-thumbs-o-up"></i>
+                    </a>
+                </div>
+                <div class="votesDown<?=$story['postID']?>">
+                    <a href="#votesDown<?=$story['postID']?>">Jump Aqui </a>
+                    <a href="../api/vote.php?story_id=<?=$story['postID']?>&type=down">
+                    <i class="fa  fa-thumbs-o-down"></i>
+                    </a>
+            </div>
+            
+                <p><?=$story['up']-$story['down']?></p>
+
             </div>
 
+            <div id='comments'>
+                    <a href="../pages/story.php?story_id=<?=$story['postID']?>">
+                    <i class="fa fa-comment"></i>
+                    </a>
+            </div>
+            <?php if(checkIfUserisLogged($_SESSION['username'],$story['username'])){
+                ?>
+                <div class="trash can">
+                    <a href="../api/delete_story.php?story_id=<?=$story['postID']?>">
+                    <i class="fa fa-trash"></i>
+                    </a>
+                </div>
+        </div>
         <?php }?>
         
 

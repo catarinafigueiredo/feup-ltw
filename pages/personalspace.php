@@ -7,13 +7,11 @@ include_once('../database/db_users.php');
 // Verify if user is logged in
 if (!isset($_SESSION['username']))
     draw_header(null);
-else
+else{
     draw_header($_SESSION['username']);
-
-
-$userInfo= getUserInformation($_SESSION['username']);
-//echo $userInfo;
-draw_users($userInfo);
-
+    $userInfo= getUserInformation($_SESSION['username']);
+    //echo $userInfo;
+    draw_users($userInfo);
+}
 draw_footer();
 ?>

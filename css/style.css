@@ -1,19 +1,18 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:'Quicksand', sans-serif;
   }
 
 body {  
-    background-color: #ffffff;
+    background-color: #ffffff6e;
 }
 
 
 .lista_css_container{
     color: #fff;
     background-color: #5995DA;  
-    padding: 20px 0;
     border: 3px solid #fff; 
     display: flex;
     justify-content: flex-end;
@@ -21,10 +20,11 @@ body {
 
 a {
     color: inherit; 
+    text-decoration: none;
 } 
 
 .lista_css {
-    width: 500px;
+    padding: 20px 0px;
     display: flex;
     justify-content: space-around;
   }
@@ -32,7 +32,8 @@ a {
 .buttons_test{
     background-color: #3d32d6;  
     color: white;
-    padding: 16px;
+    margin: 0em 1em 0em 1em;
+    padding: 1em;
     font-size: 16px;
     border: none;
 }
@@ -43,6 +44,8 @@ a {
     background-color: #3d32d6;
     color: white;
     padding: 16px;
+    margin-left: 1em;
+    margin-right: 1em;
     font-size: 16px;
     border: none;
 }
@@ -130,7 +133,7 @@ a {
 .logincontainer{
     display: flex;
     justify-content: center;   
-    background-color: #ffffff;
+    background-color: #aca2a2;
 }
 
 .login h2{
@@ -146,6 +149,7 @@ a {
 
 .login input{
     display: flex;
+    flex-direction: column; 
     margin: 2em 2em 2em 2em;
     padding: 1em 2em 1em 2em;
 }
@@ -158,22 +162,24 @@ a {
 
 .change_pwd_field{
     display: flex;
-    flex-direction: column;    
-    padding: 2em;
     background-color: #5995DA;
-    width: 400px;
-}
-
-.change_pwd_field span{
-    color:  #ffffff;
+    flex-direction: column;   
+    border: 1px solid #1207a7;
 }
 
 .change_pwd_field div{
-    display: flex;
-    justify-content: left;   
-    flex-direction: column;  
-    margin: 2em 3em 2em 3em;
+    color:  #ffffff;
+    background-color: #1207a7;
+    margin-bottom: 15px;
+    padding: 0.8em 0em 0.8em 0em;
 }
+
+.change_pwd_field input{
+    margin: 1em 2em 1em 2em;
+    padding: 1em 2em 1em 2em;
+    margin-bottom: 35px;
+}
+
 
 /* break Line*/
 .break_line{
@@ -181,4 +187,49 @@ a {
     background:#000000;
     padding: 1px;
     margin: 35px 0px 35px 0px ;
+}
+
+.stories_css{
+    display: flex;
+    justify-content: center;   
+    flex-direction: column;   
+    border: 1px solid #1207a7;
+}
+
+.story{
+    background:#fff;
+    width: 900px;
+    border: 1px solid #000000;
+    margin: 1em;   
+}
+
+.story_header{
+    background:#1207a7;
+    font-size: 0.8em;
+}
+.story_header span{
+    margin: 0em 1em 0em 1em;
+}
+
+.story_content{
+    background:#c5c5c7;
+    border: 1px solid #000000;  
+}
+
+.story_footer{
+    display: flex;
+    background:#c5c5c7;
+    border: 1px solid #000000;  
+}
+
+.story_footer > * {
+    display: flex;    
+    flex-direction: column;   
+    justify-content: center;   
+    margin: 0em 1em 0em 1em;
+}
+
+.story header{
+    margin: 1em 0em 2em 0em;
+    text-align: center;
 }
