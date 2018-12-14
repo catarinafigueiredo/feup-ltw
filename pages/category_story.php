@@ -16,6 +16,7 @@ else
     draw_header($_SESSION['username']);
 
 
+category_name($category_id);
 $stories= getAllStoriesCat($category_id);
 
 create_story();

@@ -71,8 +71,22 @@ CREATE TABLE Vote (
 INSERT INTO user VALUES('up201606334','$2y$12$0VmGwvHOaFV5rkhm2pcpwuIUM/QGVi5oVXWXOFvPtPhD3gQ3uQZTG', null, null, null);
 INSERT INTO user VALUES('Miguel','$2y$12$0VmGwvHOaFV5rkhm2pcpwuIUM/QGVi5oVXWXOFvPtPhD3gQ3uQZTG', null, null, null);
 
-INSERT INTO Category VALUES('culinaria');
-INSERT INTO Category VALUES('desporto');
+INSERT INTO Category VALUES('Culinaria');
+INSERT INTO Category VALUES('Desporto');
+INSERT INTO Category VALUES('Comédia');
+INSERT INTO Category VALUES('Saude');
+INSERT INTO Category VALUES('Ensino');
+INSERT INTO Category VALUES('Música');
+INSERT INTO Category VALUES('Arte');
+INSERT INTO Category VALUES('História');
+INSERT INTO Category VALUES('Politica');
+INSERT INTO Category VALUES('Metereologia');
+INSERT INTO Category VALUES('Ciencia');
+INSERT INTO Category VALUES('Economia');
+INSERT INTO Category VALUES('Cinema');
+INSERT INTO Category VALUES('Lazer');
+INSERT INTO Category VALUES('Literatura');
+INSERT INTO Category VALUES('Novas tecnologias');
 
 INSERT INTO SubscribeCategory VALUES('up201606334','culinaria');
 INSERT INTO SubscribeCategory VALUES('Miguel','desporto');

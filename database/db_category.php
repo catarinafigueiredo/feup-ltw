@@ -18,4 +18,5 @@ function getAllStoriesCat($category_id){
     $stmt->execute(array($category_id));
     return $stmt->fetchAll();
 }
+
 ?>

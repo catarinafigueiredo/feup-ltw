@@ -15,7 +15,9 @@
     $Categorias = getAllCategories();
     foreach($Categorias as $Categoria){
         putCategories($Categoria);
-        }?>
+        }
+    
+        ?>
 </select>
 <input type="submit" value="Post"  form="bla">
     </article>
@@ -50,7 +52,9 @@
     <article class="story" >
         <div class = "story_header">
             <span><?=$story['CategoryName']?></span>
-            <span style="color: #808080;">Posted by <?=$story['username']?></span>
+            <span style="color: #808080;"> Posted by 
+            <a href="../pages/user.php?username=<?=$story['username']?>" > <?=$story['username']?></a>
+            </span>
         </div>
 
         <div class = "story_content">
@@ -113,7 +117,7 @@
         <header><h3><a href="../pages/story.php?story_id=<?=$story['postID']?>"><?=$story['Title']?></a></h3></header>
        
         <p>Category: <?=$story['CategoryName']?></p>
-        <p>Story by <?=$story['username']?></p>
+        <p>Story by <a href="../pages/user.php?username=<?=$story['username']?>" > <?=$story['username']?></a></p>
         <p><?=$story['Dados']?></p>
         
         <div class="vote-section">
