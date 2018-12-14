@@ -1,4 +1,5 @@
 <?php function draw_header($username){
+   include_once('../templates/tpl_user.php');
     ?>
     <!DOCTYPE html>
     <html>
@@ -18,7 +19,7 @@
                             <div class = "lista_css">
                                 <div class = "buttons_test"><a href="inicialpage.php" style="text-decoration:none">Página inicial</a></div> 
                                 <div class="dropdown">
-                                    <button class="dropbtn" ><?=$_SESSION['username']?><i class="fa fa-user-circle"></i> <i class="fa fa-angle-down"></i> </button>
+                                    <button class="dropbtn" ><?=$_SESSION['username']?><?=draw_user_image("avatarSmall")?> <i class="fa fa-angle-down"></i> </button>
                                      <div class="dropdown-content">
                                         <a value ="Link 1" href ="../pages/personalspace.php">PersonalSpace</a>
                                         <a href ="../pages/usersettings.php">Settings</a>
