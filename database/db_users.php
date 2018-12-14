@@ -32,4 +32,20 @@ function getUserInformation($username){
     $stmt->execute(array($username));
     return $stmt->fetchAll();
 }
+
+function getUserStorys($username){
+    $db=Database::instance()->db();
+    $stmt=$db->prepare('SELECT * FROM Post where username = ?');
+    $stmt->execute(array($username));
+    return $stmt->fetchAll();
+}
+
+
+function getUserComments($username){
+    $db=Database::instance()->db();
+    $stmt=$db->prepare('SELECT * FROM Comment where username = ?');
+    $stmt->execute(array($username));
+    return $stmt->fetchAll();
+}
+
 ?>
