@@ -1,7 +1,7 @@
 <?php 
 include_once('../includes/session.php');
 include_once('../templates/tpl_common.php');
-include_once('../templates/tpl_personalspace.php');
+include_once('../templates/tpl_user_settings.php');
 include_once('../database/db_users.php');
 
 // Verify if user is logged in

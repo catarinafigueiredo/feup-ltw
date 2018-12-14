@@ -4,9 +4,10 @@ include_once('../database/db_users.php');
 include_once('../database/db_story.php');
 
 $username=  $_SESSION['username'];
-$title=$_POST['title'];
-$content= $_POST['comment'];
-$category=$_POST['category'];
+$title = htmlentities($_POST['title']);
+$content= htmlentities($_POST['comment']);
+
+$category= htmlentities($_POST['category']);
 
 
 $Story=insertStory($username,$title,$content,$category);

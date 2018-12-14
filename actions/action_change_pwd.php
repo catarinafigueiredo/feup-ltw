@@ -3,9 +3,9 @@ include_once('../includes/session.php');
 include_once('../database/db_users.php');
 
 
-$password= $_POST['password'];
-$newpassword= $_POST['newpassword'];
-$newpasswordconf= $_POST['newpasswordconf'];
+$password= htmlentities($_POST['password']);
+$newpassword= htmlentities$_POST['newpassword']);
+$newpasswordconf= htmlentities$_POST['newpasswordconf']);
 $username=  $_SESSION['username'];
 
 if(validUserPassword($username,$password)){

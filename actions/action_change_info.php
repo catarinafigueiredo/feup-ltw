@@ -3,8 +3,8 @@ include_once('../includes/session.php');
 include_once('../database/db_users.php');
 
 
-$password= $_POST['password'];
-$email= $_POST['email'];
+$password= htmlentities($_POST['password']);
+$email= htmlentities($_POST['email']);
 $username=  $_SESSION['username'];
 
 if(validUserPassword($username,$password)){

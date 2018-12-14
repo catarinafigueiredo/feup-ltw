@@ -61,13 +61,13 @@
         <div class = "story_footer">
             <div class="vote-section">
                 <div id="votesUp<?=$story['postID']?>" >
-                    <a href="#votesUp<?=$story['postID']?>">Jump Aqui </a>
+                    
                     <a href="../api/vote.php?story_id=<?=$story['postID']?>&type=up">
                     <i class="fa fa-thumbs-o-up"></i>
                     </a>
                 </div>
                 <div class="votesDown<?=$story['postID']?>">
-                    <a href="#votesDown<?=$story['postID']?>">Jump Aqui </a>
+                   
                     <a href="../api/vote.php?story_id=<?=$story['postID']?>&type=down">
                     <i class="fa  fa-thumbs-o-down"></i>
                     </a>
@@ -118,13 +118,13 @@
         
         <div class="vote-section">
             <div id="votesUp<?=$story['postID']?>" >
-                <a href="#votesUp<?=$story['postID']?>">Jump Aqui </a>
+             
                 <a href="../api/vote.php?story_id=<?=$story['postID']?>&type=up">
                 <i class="fa fa-thumbs-o-up"></i>
                 </a>
             </div>
             <div class="votesDown<?=$story['postID']?>">
-                <a href="#votesDown<?=$story['postID']?>">Jump Aqui </a>
+                
                 <a href="../api/vote.php?story_id=<?=$story['postID']?>&type=down">
                 <i class="fa  fa-thumbs-o-down"></i>
                 </a>

@@ -3,9 +3,9 @@ include_once('../includes/session.php');
 include_once('../database/db_users.php');
 
 
-$password= $_POST['password'];
-$email= $_POST['email'];
-$username=  $_SESSION['username'];
+$password= htmlentities($_POST['password']);
+$email = htmlentities($_POST['email']);
+$username =  $_SESSION['username'];
 
 if(validUserPassword($username,$password)){
     $db=Database::instance()->db();
@@ -14,7 +14,7 @@ if(validUserPassword($username,$password)){
 }
 else{
     echo $username;
-    $_SESSION['messages'][]=array('type'=>'error', 'content'=>'Unknow password!');
+    $_SESSION['messages'][]=array('type'=>'error', 'content'=>'Unknown password!');
 }
 header('Location: ../pages/personalspace.php');
 

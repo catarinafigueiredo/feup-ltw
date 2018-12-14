@@ -9,7 +9,7 @@ $username =$_SESSION['username'];
 
 $storyid= $_GET['story_id'];
 
-$content= $_POST['comment'];
+$content = htmlentities($_POST['comment']);
 
 
 
