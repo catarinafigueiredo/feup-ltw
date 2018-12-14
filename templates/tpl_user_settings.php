@@ -1,11 +1,11 @@
 
-<?php function draw_users($users){
+<?php function draw_users_settings($users){
     ?>
 <section id="users">
 
  <?php
   foreach ($users as $user) {
-    draw_user($user);
+    draw_user_settings($user);
 } 
 ?>
 
@@ -13,7 +13,7 @@
 
 <?php } ?>
 
-<?php function draw_user($user){
+<?php function draw_user_settings($user){
     ?>
     <header>
         <h2>Change Password</h2>

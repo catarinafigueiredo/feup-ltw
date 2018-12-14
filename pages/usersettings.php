@@ -11,7 +11,7 @@ else{
     draw_header($_SESSION['username']);
     $userInfo= getUserInformation($_SESSION['username']);
     //echo $userInfo;
-    draw_users($userInfo);
+    draw_users_settings($userInfo);
 }
 draw_footer();
 ?>
