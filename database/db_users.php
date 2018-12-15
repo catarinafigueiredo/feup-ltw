@@ -22,8 +22,8 @@ function UserExist($username,$password){
 function CreateUser($username, $password, $name, $date, $email){
     $db=Database::instance()->db();
     $options= ['cost'=>12];
-    $stmt = $db->prepare('INSERT INTO user VALUES(?,?,?,?,?,?)');
-    $stmt->execute(array($username,sha1($username),password_hash($password,PASSWORD_DEFAULT,$options), $name, $date, $email));
+    $stmt = $db->prepare('INSERT INTO user VALUES(?,?,?,?,?)');
+    $stmt->execute(array($username,password_hash($password,PASSWORD_DEFAULT,$options), $name, $date, $email));
 }
 
 function getUserInformation($username){
