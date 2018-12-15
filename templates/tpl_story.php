@@ -54,13 +54,15 @@
         <div class = "story_header">
             <span><?=$story['CategoryName']?></span>
             <span style="color: #808080;"> Posted by 
-            <a href="../pages/user.php?username=<?=$story['username']?>" > <?=$story['username']?></a>
+                <a href="../pages/user.php?username=<?=$story['username']?>" > <?=$story['username']?></a>
+            </span>
+            <span style="color: #808080;"> on
+                <?=$story['pDate']?>
             </span>
         </div>
 
         <div class = "story_content">
             <header><h3><a href="../pages/story.php?story_id=<?=$story['postID']?>"><?=$story['Title']?></a></h3></header>
-            
             <p><?=$story['Dados']?></p>
         </div>
         <div class = "story_footer">
