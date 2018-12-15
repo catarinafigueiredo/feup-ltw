@@ -10,12 +10,12 @@ $content= htmlentities($_POST['comment']);
 $category= htmlentities($_POST['category']);
 $date = date("Y-m-d");
 
-echo $date;
+
 $Story=insertStory($username,$title,$content,$category,$date);
 
 $story=reset($Story);
 $storyid=$story['postID'];
-echo $storyid;
+//echo $storyid;
   /*if(validUserPassword($username,$password)){
     echo $username;
   $_SESSION['username']= $username;

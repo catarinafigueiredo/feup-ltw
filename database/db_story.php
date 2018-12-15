@@ -57,11 +57,21 @@ function deleteStory($storyid){
 }
 
 function insertStory($username,$title,$content,$category,$date){
+
+    $date1   = new DateTime(); //this returns the current date time
+    $result = $date1->format('Y-m-d-H-i-s');  
+  // echo $result ;
+   
+
     $db=Database::instance()->db();
+    
+   
+    
     $stmt=$db->prepare('INSERT INTO Post VALUES(?,?,NULL,?,?,0,0,?)');
 
-    $stmt->execute(array($title,$content,$category,$username,$date));
+    $stmt->execute(array($title,$content,$category,$username,$result));
     $Story=$stmt->fetchAll();
+
     if(!checkIfSubscribed($username,$category)){
         $stmt=$db->prepare('INSERT INTO SubscribeCategory VALUES(?,?)');
         $stmt->execute(array($username,$category));

@@ -38,7 +38,7 @@ CREATE TABLE Post (
     username TEXT REFERENCES user(username),
     up INTEGER,
     down INTEGER,
-    pDate Date
+    pDate DATETIME CHECK (pDate>0)
 
 );
 
@@ -170,7 +170,7 @@ Barre os troncos com o creme, sem barrar as extremidades.
 Passe com o garfo para fazer o mesmo efeito.
 
 9. Decore a gosto com os fios de ovos e com as cerejas.
-A equipa do SaborIntenso.com deseja-lhe um bom apetite!',NULL,'Culinaria','up201606334',0,0,NULL);
+A equipa do SaborIntenso.com deseja-lhe um bom apetite!',NULL,'Culinaria','up201606334',0,0,'2018-08-12-12-12-12');
 
 INSERT INTO Post VALUES('Lesão de Rafa pode evitar a saída de Zivkovic','Zivkovic estava na lista de saídas para o mercado de janeiro, uma vez que não tem sido muito utilizado por Rui Vitória. No entanto, a lesão contraída por Rafa, no último duelo, pode mudar os planos do emblema encarnado, de acordo com o jornal O Jogo, deste sábado.
 
@@ -178,7 +178,7 @@ O português de 25 anos sofreu uma rotura muscular na coxa esquerda, no jogo com
 
 Nesse sentido, Zivkovic, que estava na lista de jogadores para negociar no mercado de transferências, terá de ficar e será uma opção para a ausência de Rafa.
 
-Recorde-se que Rafa, que chegou ao Benfica na temporada 2016/17, vindo do Sporting de Braga, tem um contrato assinado com o clube até junho de 2021. ',NULL,'Desporto','Miguel',0,0,NULL);
+Recorde-se que Rafa, que chegou ao Benfica na temporada 2016/17, vindo do Sporting de Braga, tem um contrato assinado com o clube até junho de 2021. ',NULL,'Desporto','Miguel',0,0,'2018-08-10-12-12-12');
 
 
 

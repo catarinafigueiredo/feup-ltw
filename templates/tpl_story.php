@@ -63,7 +63,8 @@
 
         <div class = "story_content">
             <header><h3><a href="../pages/story.php?story_id=<?=$story['postID']?>"><?=$story['Title']?></a></h3></header>
-            <p><?=$story['Dados']?></p>
+            
+            <p><?=nl2br($story['Dados'])?></p>
         </div>
         <div class = "story_footer">
             <div class="vote-section">
@@ -121,7 +122,7 @@
        
         <p>Category: <?=$story['CategoryName']?></p>
         <p>Story by <a href="../pages/user.php?username=<?=$story['username']?>" > <?=$story['username']?></a></p>
-        <p><?=$story['Dados']?></p>
+        <p><?=nl2br($story['Dados'])?></p>
         
         <div class="vote-section">
             <div id="votesUp<?=$story['postID']?>" >
@@ -213,7 +214,7 @@
     
         <article class="comment">
         <p>comment by <?=$comment['username']?></p>
-        <p><?=$comment['Dados']?></p>
+        <p><?=nl2br($comment['Dados'])?></p>
         
         <div class="vote-section-comments">
             <div id="votesUp<?=$comment['CommentID']?>" >
