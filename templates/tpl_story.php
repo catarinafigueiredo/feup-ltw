@@ -5,12 +5,12 @@
     <section id="list">
     <article class="new-story">
     <form action="../actions/action_add_story.php" method="post" id="bla">
-    <input type="text" name="title" placeholder="title">
-    
+        <input type="text" name="title" placeholder="title">
     </form>
      <textarea name="comment" form="bla" placeholder="Enter text here...">
     </textarea>
     <select name="category" form="bla" placeholder="categoria">
+
 <?php 
     $Categorias = getAllCategories();
     foreach($Categorias as $Categoria){
@@ -19,8 +19,9 @@
     
         ?>
 </select>
-<input type="submit" value="Post"  form="bla">
-    </article>
+    <input type="submit" value="Post"  form="bla">
+        </article>
+        
     </section>
 
 

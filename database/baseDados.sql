@@ -38,6 +38,7 @@ CREATE TABLE Post (
     username TEXT REFERENCES user(username),
     up INTEGER,
     down INTEGER
+    pDate Date
 
 );
 

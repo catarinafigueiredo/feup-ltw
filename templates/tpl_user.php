@@ -28,9 +28,11 @@
    
     <?php if($user['nome']!= null)
         ?>
-        <h2><?=$user['nome']?></h2>
+        <h2>nome: <?=$user['nome']?></h2>
 
-    <h4><?=$user['username']?></h4>
+    <h4>Username: <?=$user['username']?></h4>
+    <h4>Email: <?=$user['email']?></h4>
+    <h4>Born in: <?=$user['DataNascimento']?></h4>
 
     <?php if($user['username']==$_SESSION['username']){
         ?>

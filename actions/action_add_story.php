@@ -8,9 +8,10 @@ $title = htmlentities($_POST['title']);
 $content= htmlentities($_POST['comment']);
 
 $category= htmlentities($_POST['category']);
+$date = date("Y-m-d");
 
-
-$Story=insertStory($username,$title,$content,$category);
+echo $date;
+$Story=insertStory($username,$title,$content,$category,$date);
 
 $story=reset($Story);
 $storyid=$story['postID'];

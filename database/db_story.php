@@ -56,11 +56,11 @@ function deleteStory($storyid){
 
 }
 
-function insertStory($username,$title,$content,$category){
+function insertStory($username,$title,$content,$category,$date){
     $db=Database::instance()->db();
-    $stmt=$db->prepare('INSERT INTO Post VALUES(?,?,NULL,?,?,0,0)');
+    $stmt=$db->prepare('INSERT INTO Post VALUES(?,?,NULL,?,?,0,0,?)');
 
-    $stmt->execute(array($title,$content,$category,$username));
+    $stmt->execute(array($title,$content,$category,$username,$date));
     $Story=$stmt->fetchAll();
     if(!checkIfSubscribed($username,$category)){
         $stmt=$db->prepare('INSERT INTO SubscribeCategory VALUES(?,?)');
