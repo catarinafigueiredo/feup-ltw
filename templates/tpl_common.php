@@ -65,6 +65,41 @@
    
 
 <?php } ?>
+
+<?php function create_category(){   
+    ?>
+    <header>
+        <div class="create_story_button">
+            <button onclick="addcomment()"> 
+            <span>Create New Category</span></button>  
+            <div id="input_section"style="display: none;">
+            <div>
+                <form action="../actions/action_add_category.php?" method="post" id="new_category">
+                    <textarea name="category" form="new_category" placeholder="Enter text here...">
+                    </textarea>
+                    <button type="submit">
+                        Create</i>
+                    </button> 
+                </form>
+            </div>
+        </div>
+        </div>
+    </header>
+   
+
+<?php } ?>
+
+<script>
+        function addcomment() {
+            var x = document.getElementById("input_section");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+</script>
+
 <?php function draw_footer(){   
     ?>
     <header>

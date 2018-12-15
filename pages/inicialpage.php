@@ -17,6 +17,8 @@ $stories= getAllStories();
 
 create_story();
 
+create_category();
+
 draw_stories($stories);
 
 $categories = getAllCategory();
