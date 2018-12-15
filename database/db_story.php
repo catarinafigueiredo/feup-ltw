@@ -58,10 +58,9 @@ function deleteStory($storyid){
 
 function insertStory($username,$title,$content,$category,$date){
 
-    $date1   = new DateTime(); //this returns the current date time
+    $date1 = new DateTime(); //this returns the current date time
     $result = $date1->format('Y-m-d-H-i-s');  
-  // echo $result ;
-   
+
 
     $db=Database::instance()->db();
     
@@ -71,20 +70,39 @@ function insertStory($username,$title,$content,$category,$date){
 
     $stmt->execute(array($title,$content,$category,$username,$result));
     $Story=$stmt->fetchAll();
-
+    $dd="insere na bd";
     if(!checkIfSubscribed($username,$category)){
+        
+
         $stmt=$db->prepare('INSERT INTO SubscribeCategory VALUES(?,?)');
         $stmt->execute(array($username,$category));
+        echo $dd;
    }
    return $Story;
 }
 
 function checkIfSubscribed($username,$category){
     $db=Database::instance()->db();
-    $stmt= $db->prepare('SELECT CategoryName  FROM SubscribeCategory  WHERE username= ? ');
-    $stmt->execute(array($username));
+    $stmt= $db->prepare('SELECT CategoryName  FROM SubscribeCategory  WHERE username= ? and CategoryName=?');
+    $stmt->execute(array($username,$category));
+    $isso="nao existe ainda";
+    $isso1="ja existe";
+    $user=$stmt->fetchAll();
+    print_r(reset($user));
 
-    $categoriesUser= $stmt->fetchAll();
+   if( empty(reset($user))){
+    echo $isso;
+       return false;
+
+   }else{ 
+    echo $isso1;
+      
+        return true;
+   }
+
+  
+
+    /*$categoriesUser= $stmt->fetchAll();
 
     foreach($categoriesUser as $categoryUser){
         if($categoryUser === $category){
@@ -92,7 +110,7 @@ function checkIfSubscribed($username,$category){
         }else{
             return false;
         }
-    }
+    }*/
 }
 
 ?>

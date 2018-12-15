@@ -81,8 +81,8 @@ INSERT INTO user VALUES('Jorge','$2y$12$0VmGwvHOaFV5rkhm2pcpwuIUM/QGVi5oVXWXOFvP
 INSERT INTO user VALUES('Julio','$2y$12$0VmGwvHOaFV5rkhm2pcpwuIUM/QGVi5oVXWXOFvPtPhD3gQ3uQZTG', null, null, null);
 
 
-INSERT INTO SubscribeCategory VALUES('up201606334','culinaria');
-INSERT INTO SubscribeCategory VALUES('Miguel','desporto');
+INSERT INTO SubscribeCategory VALUES('up201606334','Culinaria');
+INSERT INTO SubscribeCategory VALUES('Miguel','Desporto');
 
 INSERT INTO Category VALUES('Culinaria');
 INSERT INTO Category VALUES('Desporto');

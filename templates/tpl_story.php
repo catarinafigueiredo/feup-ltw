@@ -34,6 +34,27 @@
 <?php } ?>
 
 
+<?php function draw_order_buttons(){
+    ?>
+   <div class="article-container">
+        <div class="order" id="orderDiv">
+            <button class="order-button active"><p>Recent</p></button>
+            <button class="order-button"><p>Oldest</p></button>
+            <button class="order-button"><p>Popular</p></button>
+            <button class="order-button"><p>Subscribed</p></button>
+        </div>
+        <div class="ordered-publications">
+            <?php                
+                $publications = getRecentPublications();
+                draw_stories($publications);
+                //draw_publications($publications, "Fresh");
+            ?>
+        </div>
+    </div>
+
+<?php } ?>
+
+
 
 
 <?php function draw_stories($stories){

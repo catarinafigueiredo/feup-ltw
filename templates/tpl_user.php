@@ -55,6 +55,24 @@
 
 <?php }?> 
 
+<?php function draw_comment_story_buttons($username){
+    ?>
+   <div class="article-container">
+        <div class="chooseCorS" id="chooseCorSDiv">
+            <button class="chooseCorS-button active"><p>Storys</p></button>
+            <button class="chooseCorS-button"><p>Comments</p></button>
+        </div>
+        <div class="comments-storys">
+            <?php                
+                $publications = getRecentPublicationsUser($username);
+                draw_stories($publications);
+                
+            ?>
+        </div>
+    </div>
+
+<?php } ?>
+
 
 
 
