@@ -54,10 +54,13 @@
             </header>
 
 <?php } ?>
+
 <?php function create_story(){   
     ?>
     <header>
-        <h5> <a href="createstory.php">Create Story</a> </h5>
+        <div class="create_story_button">
+            <h5> <a href="createstory.php">Create Story</a> </h5>
+        </div>
     </header>
    
 
