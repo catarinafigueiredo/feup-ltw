@@ -143,7 +143,20 @@ function deleteVoteDownComment($storyid,$CommentID){
 
 
 
- 
+function getUpVotes($storyid){
+    $db= Database::instance()->db();
+    $stmt= $db->prepare('SELECT up FROM Post WHERE  PostID=? ');
+    $stmt->execute(array($storyid));
+    $user= $stmt->fetch();
+    return $user;
+}
+function getDownVotes($storyid){
+    $db= Database::instance()->db();
+    $stmt= $db->prepare('SELECT down FROM Post WHERE  PostID=? ');
+    $stmt->execute(array($storyid));
+    $user= $stmt->fetch();
+    return $user;
+}
 
 
 ?>

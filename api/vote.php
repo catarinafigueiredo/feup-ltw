@@ -6,8 +6,8 @@ include_once('../templates/tpl_story.php');
 include_once('../database/db_story.php');
 include_once('../database/db_vote.php');
 
-$storyid= $_GET['story_id'];
-$type= $_GET['type'];
+$storyid= $_POST['story_id'];
+$type= $_POST['type'];
 
 $story = reset(getStory($storyid));
 // Verify if user is logged in
@@ -30,7 +30,7 @@ if($type=="up"){
     }else{
 
         if(checkIfvoteUp($username,$storyid)){
-             echo $username;
+            // echo $username;
              deleteVoteUp($storyid);
 
         }else if(checkIfvoteDown($username,$storyid)){
@@ -49,20 +49,24 @@ if($type=="up"){
        
         if(checkIfvoteUp($username,$storyid)){
             deleteVoteUp($storyid);
-            echo $type;
+            
             createVoteDown($storyid,$username);
-            //retira up poem down
+            
         }
        else if(checkIfvoteDown($username,$storyid)){
-            echo $username;
+            
             deleteVoteDown($storyid);
-            //retira down 
+           
         }
         
     }
-   
+    
+  
 
 }
+$storyUp=getUpVotes($storyid);
+$storyDown=getDownVotes($storyid);
+draw_votes($storyid,$storyUp['up'],$storyDown['down']);
 //votesUp<?=$story['postID']
 
 //header('Location: ../pages/inicialpage.php#votesUp?story_id=$storyid');

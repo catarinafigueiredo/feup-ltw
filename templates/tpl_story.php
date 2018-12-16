@@ -92,9 +92,9 @@
 
            <div class="vote-toggle">
                 <?php
-                    draw_votes($story['postID']);
+                    draw_votes($story['postID'],$story['up'],$story['down']);
                 ?>
-                <p><?=$story['up']-$story['down']?></p>
+               
             </div>
 
             <div id='comments'>
@@ -104,9 +104,11 @@
             </div>
             <?php if(checkIfUserisLogged($_SESSION['username'],$story['username'])){
                 ?>
-                <div class="trash can">
-                    <a href="../api/delete_story.php?story_id=<?=$story['postID']?>">
+                <div class="trash-can">
+                    <a id="delete-story">
+                    <input  type="hidden" name="story_id" value="<?=$story['postID']?>">   
                     <i class="fa fa-trash"></i>
+                    </a>
                     </a>
                 </div>
         </div>
@@ -120,22 +122,30 @@
 
 <?php }?> 
 
-<?php function draw_votes($story_id){
+<?php function draw_votes($story_id,$storyUp,$storyDown){
     ?>
-    <div class="vote-section">
-        <div id="votesUp <?=$story_id?>" >
+    <div class="votes">
+        
             
-            <a href="../api/vote.php?story_id=<?=$story_id?>&type=up">
+            <a id="voto">
+            <input  type="hidden" name="story_id" value="<?=$story_id?>">
+            <input  type="hidden" name="type" value="up">           
             <i class="fa fa-thumbs-o-up"></i>
+        
             </a>
-        </div>
-        <div class="votesDown <?=$story_id?>">
-            
-            <a href="../api/vote.php?story_id=<?=$story_id?>&type=down">
+        
+    </div>
+    <div class="votes">
+     
+            <a id="voto">
+            <input  type="hidden" name="story_id" value="<?=$story_id?>">
+            <input  type="hidden" name="type" value="down">
             <i class="fa  fa-thumbs-o-down"></i>
             </a>
-        </div>
+        
     </div>
+    <p><?=$storyUp-$storyDown?></p>
+    
 <?php } ?>
 
 

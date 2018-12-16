@@ -5,8 +5,10 @@ include_once('../templates/tpl_auth.php');
 include_once('../templates/tpl_story.php');
 include_once('../database/db_story.php');
 include_once('../database/db_vote.php');
+include_once('../database/db_order.php');
 
-$storyid= $_GET['story_id'];
+$storyid= $_POST['story_id'];
+$type= $_POST['type'];
 
 
 $story = reset(getStory($storyid));
@@ -19,9 +21,31 @@ else
 //$username=$story['username'];
 $username =$_SESSION['username'];
 
-echo $username;
-echo $storyid;
+//echo $username;
+//echo $storyid;
 deleteStory($storyid);
+
+switch ($type) {
+    case 'Recent':
+    
+        draw_stories(getRecentPublications());
+        break;
+    case 'Oldest':
+
+        draw_stories(getOldestsPublications());
+        break;
+    case 'Popular':
+
+        draw_stories(getPopularPublications());
+        break;
+    case 'Subscribed':
+
+        draw_stories(getSubscribedPublications($username));
+        break;
+    default:
+         draw_stories(getRecentPublications());
+        break;
+}
 
 
    
@@ -31,7 +55,7 @@ deleteStory($storyid);
 
 //header('Location: ../pages/inicialpage.php#votesUp?story_id=$storyid');
 
-header("Location: ../pages/inicialpage.php");
+//header("Location: ../pages/inicialpage.php");
 
 
 
