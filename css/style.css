@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    
     box-sizing: border-box;
     font-family:'Quicksand', sans-serif;
   }
@@ -23,40 +24,12 @@ body {
     height: 200px;
     border-radius: 50%;
   }
-
-.create_story_button{
+  .buttons_test{
     background-color: #3d32d6;  
     color: white;
     margin: 0em 1em 0em 1em;
-    padding: 1em;
-    font-size: 16px;
-    border: none;
-
-} 
-
-.lista_css_container{
-    color: #fff;
-    background-color: #5995DA;  
-    border: 3px solid #fff; 
-    display: flex;
-    justify-content: flex-end;
-}
-
-a {
-    color: inherit; 
-    text-decoration: none;
-} 
-
-.lista_css {
-    padding: 20px 0px;
-    display: flex;
-    justify-content: space-around;
-  }
-
-.buttons_test{
-    background-color: #3d32d6;  
-    color: white;
-    margin: 0em 1em 0em 1em;
+    text-align: center;
+    
     padding: 1em;
     font-size: 16px;
     border: none;
@@ -65,7 +38,7 @@ a {
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #3d32d6;
+    background-color: #5a5964;
     color: white;
     padding: 16px;
     margin-left: 1em;
@@ -80,14 +53,120 @@ a {
     display: inline-block;
 }
 
-
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #5995DA;
+    padding: 16px;
+    margin-left: 1em;
+    margin-right: 2em;
     min-width: 160px;
     z-index: 1;
 }
+.headerFixo {
+  
+    padding: 10px 10px;
+    background: #555;
+    color: #f1f1f1;
+}
+.create_story_button{
+    background-color: #2b2b55;  
+    color: white;
+    margin: 0em 10em 0em 1em;
+    padding: 2em 2em 2em 2em;
+    text-align: center;
+    font-size: 16px;
+    border:1em ;
+    width: 200px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    position: fixed;
+    z-index:1;
+    display: flex;
+    top:12em;
+    left:64em;
+    overflow-x:hidden;
+} 
+.create_story_button a:hover{
+    
+    color: rgb(97, 31, 31);
+} 
+
+.create_category_button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    margin: 0em 10em 0em 1em;
+    padding: 2em 2em 2em 2em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 200px;
+    border-radius: 7px;
+    position: fixed;
+    z-index:1;
+    top:17em;
+    left:64em;
+    overflow-x:hidden;
+}
+.select_category h4{
+    /*background-color: #4CAF50; */
+    color: black;
+    padding: 12px 16px;
+    width: 15em;
+    border: 1px solid #888;
+    text-decoration: none;
+    display: block;
+    
+} 
+.select_category div{
+    width: 15em;
+    border: 1px solid #888;
+}
+.create_category_button textarea{
+    border: 1px solid #888; 
+    outline: none;
+    resize: none;
+    overflow: auto;
+
+}
+
+.lista_css_container{
+    color: #fff;
+    background-color: #5995DA;  
+    border: 0px solid #fff; 
+    display: flex;
+    justify-content: flex-end;
+}
+
+a {
+    color: inherit; 
+    text-decoration: none;
+} 
+
+.lista_css {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+
+
+/* Page content */
+.content {
+    padding: 16px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+.sticky + .content {
+    padding-top: 1px;
+  }
 
 
 .dropdown-content a {
@@ -169,6 +248,7 @@ a {
 .login{
     background-color: #5995DA;    
     border: 1px solid #1207a7;
+    border-radius: 7px;
 }
 
 .login input{
@@ -217,12 +297,12 @@ a {
     display: flex;
     justify-content: center;   
     flex-direction: column;   
-    border: 1px solid #1207a7;
+    /*border: 1px solid #1207a7;*/
 }
 
 .story{
     background:#fff;
-    width: 900px;
+    width: 800px;
     border: 1px solid #000000;
     margin: 1em;   
 }
@@ -256,4 +336,42 @@ a {
 .story header{
     margin: 1em 0em 2em 0em;
     text-align: center;
+}
+
+.article-container #orderDiv{
+  height: 75%;
+  width: 10em;
+  position: fixed;
+  z-index: 1;
+  top: 10em;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  box-sizing: border-box;
+ /* padding-top: 20px;
+  padding-bottom: 200px;*/
+
+ 
+}
+
+.article-container #orderDiv button{
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  border: none;
+  background-color: #111;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.article-container #orderDiv button:hover {
+    color: #f1f1f1;
+
+  }
+
+.ordered-publications{
+    margin-left: 160px; /* Same as the width of the sidenav */
+    /* font-size: 28px; Increased text to enable scrolling */
+    padding: 0px 10px;
+
 }

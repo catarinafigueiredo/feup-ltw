@@ -2,13 +2,15 @@
 <?php function draw_categories($categories){
     ?>
 
-<div>
+<div class="select_category">
     <h4>Select By Category</h4>
+    <div class="category">
  <?php
   foreach ($categories as $category) {
    draw_category($category);
 } 
 ?>
+</div>
 </div>
 <?php } ?>
 

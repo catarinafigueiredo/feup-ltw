@@ -20,7 +20,7 @@ $stories= getAllStories();
 
 create_story();
 create_category();
-draw_categories($categories);
+//draw_categories($categories);
 draw_order_buttons();
 
 

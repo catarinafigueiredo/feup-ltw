@@ -1,4 +1,21 @@
 'use strict'
+window.onscroll= function(){
+    functionCroll()
+};
+var header= document.getElementById("headerFixo");
+
+var sticky= header.offsetTop;
+
+function functionCroll(){
+    if(window.pageYOffset>sticky){
+        header.classList.add("sticky");
+    }else{
+        header.classList.remove("sticky");
+    }
+}
+
+
+
 //INICIO TRATAR VOTOS
 let votes= document.querySelectorAll("div.vote-toggle");
 console.log(votes);

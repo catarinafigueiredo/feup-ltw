@@ -11,7 +11,7 @@
            <script src="../js/main.js" defer></script>
         </head>
         <body>
-            <header>
+            <header class="headerFixo" id="headerFixo">
                 <h1><a href="inicialpage.php"><i class="fa fa-wikipedia-w"></i> Dabliu</a></h1>
                 <?php if($username != null){?>
                     <nav>
@@ -70,7 +70,7 @@
 <?php function create_category(){   
     ?>
     <header>
-        <div class="create_story_button">
+        <div class="create_category_button">
             <button onclick="addNewCategory()"> 
             <span>Create New Category</span></button>  
             <div id="sectionI"style="display: none;">

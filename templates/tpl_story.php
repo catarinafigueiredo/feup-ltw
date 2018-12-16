@@ -42,12 +42,18 @@
             <button class="order-button"><p>Oldest</p></button>
             <button class="order-button"><p>Popular</p></button>
             <button class="order-button"><p>Subscribed</p></button>
+            <?php 
+             $categories = getAllCategory();
+             foreach ($categories as $category) {?>
+                 <button class="order-button"><p><?=array_values($category)[0]?></p></button>
+             <?php } ?>
+            ?>  
         </div>
         <div class="ordered-publications">
             <?php                
                 $publications = getRecentPublications();
                 draw_stories($publications);
-                //draw_publications($publications, "Fresh");
+                
             ?>
         </div>
     </div>

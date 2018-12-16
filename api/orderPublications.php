@@ -2,9 +2,17 @@
 include_once('../includes/session.php');
 include_once('../database/db_order.php');
 include_once('../templates/tpl_story.php');
+include_once('../database/db_category.php');
 
 $username=$_SESSION['username'];
 $order=$_POST['order'];
+
+$categories = getAllCategory();
+
+
+
+     $i=0;
+
 
 switch ($order) {
     case 'Recent':
@@ -24,7 +32,17 @@ switch ($order) {
         draw_stories(getSubscribedPublications($username));
         break;
     default:
-         draw_stories(getRecentPublications());
+        
+        foreach($categories as $category){
+            if($order== $category['CategoryName'] ){
+            $i=1;
+        
+            $stories= getAllStoriesCat($category['CategoryName']);
+            draw_stories($stories);
+            }
+        }
+        if($i==0){
+         draw_stories(getRecentPublications());}
         break;
 }
 
