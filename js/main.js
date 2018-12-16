@@ -1,4 +1,17 @@
 'use strict'
+//INICIO TRATAR VOTOS
+let votes= document.querySelectorAll("div.vote-section");
+if(votes)
+    votes.forEach((vote)=> vote.addEventListener('click',submitVote));
+
+    function submitVote(event){
+        
+    }
+
+
+//FIM TRATAR VOTOS
+
+
 let comments_comments = document.querySelectorAll('.comment_button');
 for(var i=0; i < comments_comments.length;i++){
     comments_comments[i].addEventListener('click',add_comment_comment_form);
@@ -54,6 +67,8 @@ if(btnsCorS){
             request.addEventListener('load',function(){
                 let storyPublications= document.querySelector('div.comments-storys');
                 storyPublications.innerHTML=this.responseText;
+               // let thumbs = document.querySelectorAll("div.vote-section");
+                //if (thumbs) thumbs.forEach((thumb) => thumb.addEventListener('click', submitThumb));
             });
             request.send(encodeForAjax({ type: type }));
         
@@ -63,6 +78,8 @@ if(btnsCorS){
         
     }
 }
+
+
 
 
 

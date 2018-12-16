@@ -38,8 +38,8 @@ function getSubscribedPublications($username){
 
     $categories= $stmt->fetchAll(); 
     $story=array();
-    $break="DDDDDD";
-    //print_r($story);
+    
+   
    
     foreach ($categories as $category) {
        
@@ -47,15 +47,15 @@ function getSubscribedPublications($username){
 
         $stmts->execute(array($category['CategoryName']));
         $storys = $stmts->fetchAll(); 
-        //print_r($storys);
+       
         $end= array_merge($story,$storys);
         $story=$end;
        
-        //echo $break;
+       
 
         
     } 
-    //print_r($story);
+   
     return $story;
 }
 

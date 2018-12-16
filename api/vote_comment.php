@@ -63,7 +63,7 @@ if($type=="up"){
 //votesUp<?=$story['postID']
 
 //header('Location: ../pages/inicialpage.php#votesUp?story_id=$storyid');
-header("Location: ../pages/story.php?story_id=$storyid");
+//header("Location: ../pages/story.php?story_id=$storyid");
 
 
 

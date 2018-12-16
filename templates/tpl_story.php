@@ -88,22 +88,13 @@
             <p><?=nl2br($story['Dados'])?></p>
         </div>
         <div class = "story_footer">
-            <div class="vote-section">
-                <div id="votesUp<?=$story['postID']?>" >
-                    
-                    <a href="../api/vote.php?story_id=<?=$story['postID']?>&type=up">
-                    <i class="fa fa-thumbs-o-up"></i>
-                    </a>
-                </div>
-                <div class="votesDown<?=$story['postID']?>">
-                   
-                    <a href="../api/vote.php?story_id=<?=$story['postID']?>&type=down">
-                    <i class="fa  fa-thumbs-o-down"></i>
-                    </a>
-            </div>
-            
-                <p><?=$story['up']-$story['down']?></p>
+        
 
+           <div class="vote-toggle">
+                <?php
+                    draw_votes($story['postID']);
+                ?>
+                <p><?=$story['up']-$story['down']?></p>
             </div>
 
             <div id='comments'>
@@ -128,6 +119,25 @@
     </article>
 
 <?php }?> 
+
+<?php function draw_votes($story_id){
+    ?>
+    <div class="vote-section">
+        <div id="votesUp <?=$story_id?>" >
+            
+            <a href="../api/vote.php?story_id=<?=$story_id?>&type=up">
+            <i class="fa fa-thumbs-o-up"></i>
+            </a>
+        </div>
+        <div class="votesDown <?=$story_id?>">
+            
+            <a href="../api/vote.php?story_id=<?=$story_id?>&type=down">
+            <i class="fa  fa-thumbs-o-down"></i>
+            </a>
+        </div>
+    </div>
+<?php } ?>
+
 
 <?php function checkIfUserisLogged($usernameLogged,$storyusername){
     return $usernameLogged == $storyusername;
