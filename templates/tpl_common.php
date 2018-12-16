@@ -11,8 +11,9 @@
            <script src="../js/main.js" defer></script>
         </head>
         <body>
+           
             <header class="headerFixo" id="headerFixo">
-                <h1><a href="inicialpage.php"><i class="fa fa-wikipedia-w"></i> Dabliu</a></h1>
+                 <h1><a href="inicialpage.php"><i class="fa fa-wikipedia-w"></i> Dabliu</a></h1>
                 <?php if($username != null){?>
                     <nav>
                     

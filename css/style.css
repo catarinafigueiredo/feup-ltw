@@ -68,6 +68,8 @@ body {
     padding: 10px 10px;
     background: #555;
     color: #f1f1f1;
+    text-align: center;
+    justify-content: center;  
 }
 .create_story_button{
     background-color: #2b2b55;  
@@ -83,7 +85,7 @@ body {
     position: fixed;
     z-index:1;
     display: flex;
-    top:12em;
+    top:23em;
     left:64em;
     overflow-x:hidden;
 } 
@@ -106,7 +108,7 @@ body {
     border-radius: 7px;
     position: fixed;
     z-index:1;
-    top:17em;
+    top:28em;
     left:64em;
     overflow-x:hidden;
 }
@@ -143,6 +145,7 @@ body {
 a {
     color: inherit; 
     text-decoration: none;
+    text-align: center;
 } 
 
 .lista_css {
@@ -150,7 +153,11 @@ a {
     display: flex;
     justify-content: space-around;
   }
-
+  .lista_css_container h1{
+    margin-left: 10px;
+    text-align: center;
+    
+  }
 
 
 /* Page content */
@@ -374,4 +381,78 @@ a {
     /* font-size: 28px; Increased text to enable scrolling */
     padding: 0px 10px;
 
+}
+
+
+.new-story{
+    background-color: #111;
+    display: block;
+    width: 70%;
+    justify-content: center;  
+    margin: 2em 2em 2em 2em;
+    border-style: dotted;
+    border-width: 2px;
+    padding: 25px;
+    box-sizing: border-box;
+   /* width: 50%;*/
+
+}
+.new-story input[type=text]{
+    width: 100%;
+    justify-content: center; 
+    padding: 12px 20px;
+    margin: 0em 0em 1em 0em;
+    /*display: block;*/
+    display: inline-block;
+    border: 4px ;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /*background-color: rgb(90, 78, 78);
+    border-radius: 7px;*/
+   
+}
+.new-story form{
+    margin:auto;
+  
+   
+}
+
+.new-story textarea{
+    width: 100%;
+    border: 1px solid #888; 
+    padding: 12px 20px;
+    outline: none;
+    resize: none;
+    margin: auto;
+    overflow: auto;
+
+    border-radius: 4px;
+   
+}
+.new-story input{
+    margin:auto;
+    width:50%;
+}
+.new-story input[type=submit]{
+    width: 50%;
+   /* width:200px;*/
+    padding: 12px 20px;
+    margin: auto;
+    display: block;
+    border: 1px solid #ccc;
+    
+    box-sizing: border-box;
+    /*background-color: rgb(90, 78, 78);
+    border-radius: 7px;*/
+   
+}
+.new-story select{
+    background-color: rgb(82, 75, 75);
+    border-radius: 4px;
+    margin: 2em 2em 2em 2em;
+     padding: 1em;
+   /* width: 50%;*/
+    width:200px;
+    box-sizing: border-box;
+    
 }

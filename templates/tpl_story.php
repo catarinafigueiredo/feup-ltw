@@ -7,7 +7,7 @@
     <form action="../actions/action_add_story.php" method="post" id="bla">
         <input type="text" name="title" placeholder="title">
     </form>
-     <textarea name="comment" form="bla" placeholder="Enter text here...">
+     <textarea name="comment" form="bla" cols="80" rows="15" placeholder="Enter text here...">
     </textarea>
     <select name="category" form="bla" placeholder="categoria">
 
