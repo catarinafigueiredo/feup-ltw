@@ -35,6 +35,16 @@ body {
     border: none;
 }
 
+.search_div{
+    display: flex;
+    margin-right: 5em;
+    justify-content: flex-end;
+}
+
+.search_div > *{
+    float: right;
+}
+
 
 /* Dropdown Button */
 .dropbtn {
@@ -151,8 +161,8 @@ a {
 
 .lista_css {
     padding: 10px 0px;
+    background:#000000;
     display: flex;
-    justify-content: space-around;
   }
   .lista_css_container h1{
     margin-left: 10px;
@@ -457,3 +467,16 @@ a {
     box-sizing: border-box;
     
 }
+
+/* Search_BAR*/
+
+.search_bar {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  /* When the input field gets focus, change its width to 100% */
+  .search_bar:focus {
+    width: 80%;
+  } 

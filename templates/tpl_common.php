@@ -18,6 +18,13 @@
                     <nav>
                     
                         <div class = "lista_css_container">
+                        <div class = "search_div">    
+                            <form action="search.php" method="get">  
+                                <input type="text" name="key_word" class ="search_bar" placeholder="Search.."> 
+                                    <button type="submit">  
+                                        <span>Search</span>
+                                    </button>
+                            </form>  
                             <div class = "lista_css">
                                 <div class = "buttons_test"><a href="inicialpage.php" style="text-decoration:none">Página inicial</a></div> 
                                 <div class="dropdown">
@@ -36,7 +43,15 @@
                <?php if($username == null){?>
                 <nav>
                     <div class = "lista_css_container">
-                        <div class = "lista_css">
+                        <div class = "search_div">    
+                            <form action="search.php" method="get">  
+                                <input type="text" name="key_word" class ="search_bar" placeholder="Search.."> 
+                                    <button type="submit">  
+                                        <span>Search</span>
+                                    </button>
+                            </form>  
+                        </div> 
+                        <div class = "lista_css">    
                             <div class = "buttons_test"><a href="inicialpage.php">Página inicial</a></div>
                             <div class = "buttons_test"><a href="signup.php" style="text-decoration:none">Sign Up</a></div>
                             <div class = "buttons_test"><a href="../actions/action_login.php">Log In</a></div>

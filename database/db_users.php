@@ -10,6 +10,7 @@ include_once('../includes/database.php');
 
 }
 
+
 function UserExist($username,$password){
     $db= Database::instance()->db();
     $stmt= $db->prepare('SELECT * FROM user WHERE username = ?');
@@ -17,6 +18,13 @@ function UserExist($username,$password){
     $user= $stmt->fetch();
     return $user !== false ;
 
+}
+
+function get_users_by_name($information){
+    $db=Database::instance()->db();
+    $stmt=$db->prepare('SELECT * FROM user where username = ?');
+    $stmt->execute(array($information));
+    return $stmt->fetchAll();
 }
 
 function CreateUser($username, $password, $name, $date, $email){
