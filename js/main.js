@@ -16,7 +16,7 @@ function functionCroll(){
 
 
 
-//INICIO TRATAR VOTOS
+//INICIO TRATAR VOTOS STORYS
 let votes= document.querySelectorAll("div.vote-toggle");
 console.log(votes);
 if(votes)
@@ -45,8 +45,40 @@ if(votes)
         
     }
 
+//FIM TRATAR VOTOS COMMENTS
 
-//FIM TRATAR VOTOS
+console.log(votes);
+let votes_comment= document.querySelectorAll("div.vote-toggle-comment");
+if(votes_comment)
+    votes_comment.forEach((vote_comment)=> vote_comment.addEventListener('click',submitVote_comment));
+
+    function submitVote_comment(event){
+        if(event.target.closest("a[id=voto-comment]"))
+        {
+            let votes_comment= event.target.closest('div.vote-comment');
+            let votes_comment_comment= event.target.closest('div.vote-toggle-comment');
+            let parent= event.target.parentElement;
+            console.log(parent);
+            let story_id= parent.querySelector('input[name=story_id]').value;
+            let type= parent.querySelector('input[name=type]').value;
+            let comment_id= parent.querySelector('input[name=comment_id').value;
+            let request= new XMLHttpRequest();
+            request.open('POST','../api/vote_comment.php',true);
+            request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            request.addEventListener('load',function(){
+                votes_comment_comment.innerHTML=this.responseText;
+            });
+            request.send(encodeForAjax({
+                story_id: story_id,
+                type: type,
+                comment_id: comment_id 
+            }));
+
+        }
+        
+    }
+
+//FIM TRATAR VOTOS COMMENTS
 
 // DELETE STORY-INICIO
 let trash_cans= document.querySelectorAll("div.trash-can");

@@ -136,6 +136,7 @@ body {
 
 .lista_css_container{
     color: #fff;
+    height: 100px;
     background-color: #5995DA;  
     border: 0px solid #fff; 
     display: flex;

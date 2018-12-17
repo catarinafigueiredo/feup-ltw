@@ -112,7 +112,8 @@
                 ?>
                 <div class="trash-can">
                     <a id="delete-story">
-                    <input  type="hidden" name="story_id" value="<?=$story['postID']?>">   
+                    <input  type="hidden" name="story_id" value="<?=$story['postID']?>">
+                    <input type="hidden" name="place" value="allStory">   
                     <i class="fa fa-trash"></i>
                     </a>
                     </a>
@@ -155,6 +156,35 @@
 <?php } ?>
 
 
+<?php function draw_votes_comment($story_id,$comment_id,$commentUp,$commentDown){
+    ?>
+    <div class="votes-comment">
+        
+        
+        <a id="voto-comment">
+        <input  type="hidden" name="story_id" value="<?=$story_id?>">
+        <input  type="hidden" name="type" value="up">       
+        <input  type="hidden" name="comment_id" value="<?=$comment_id?>">      
+        <i class="fa fa-thumbs-o-up"></i>
+    
+        </a>
+        
+    </div>
+    <div class="votes-comment">
+     
+        <a id="voto-comment">
+        <input  type="hidden" name="story_id" value="<?=$story_id?>">
+        <input  type="hidden" name="type" value="down">
+        <input  type="hidden" name="comment_id" value="<?=$comment_id?>">      
+        <i class="fa  fa-thumbs-o-down"></i>
+        </a>
+    
+    </div>
+    <p><?=$commentUp-$commentDown?></p>
+    
+<?php } ?>
+
+
 <?php function checkIfUserisLogged($usernameLogged,$storyusername){
     return $usernameLogged == $storyusername;
 
@@ -171,22 +201,12 @@
         <p>Story by <a href="../pages/user.php?username=<?=$story['username']?>" > <?=$story['username']?></a></p>
         <p><?=nl2br($story['Dados'])?></p>
         
-        <div class="vote-section">
-            <div id="votesUp<?=$story['postID']?>" >
-             
-                <a href="../api/vote.php?story_id=<?=$story['postID']?>&type=up">
-                <i class="fa fa-thumbs-o-up"></i>
-                </a>
-            </div>
-            <div class="votesDown<?=$story['postID']?>">
-                
-                <a href="../api/vote.php?story_id=<?=$story['postID']?>&type=down">
-                <i class="fa  fa-thumbs-o-down"></i>
-                </a>
-            </div>
-        
-            <p><?=$story['up']-$story['down']?></p>
-
+   
+        <div class="vote-toggle">
+                <?php
+                    draw_votes($story['postID'],$story['up'],$story['down']);
+                ?>
+               
         </div>
         <button onclick="addcomment()"> 
                 <i class="fa fa-comment"></i></button>  
@@ -206,8 +226,10 @@
         </div>
         <?php if(checkIfUserisLogged($_SESSION['username'],$story['username'])){
             ?>
-            <div class="trash can">
-                <a href="../api/delete_story.php?story_id=<?=$story['postID']?>">
+             
+            
+            <div class="trash_can">
+                <a href="../api/delete_storyOnly.php?story_id=<?=$story['postID']?>">
                 <i class="fa fa-trash"></i>
                 </a>
             </div>
@@ -262,26 +284,15 @@
         <article class="comment">
         <p>comment by <?=$comment['username']?></p>
         <p><?=nl2br($comment['Dados'])?></p>
-        
-        <div class="vote-section-comments">
-            <div id="votesUp<?=$comment['CommentID']?>" >
-               
-                <p><?=$comment['PostID']?> <?=$comment['CommentID']?></p>
-                <a href="../api/vote_comment.php?story_id=<?=$comment['PostID']?>&type=up&comment_id=<?=$comment['CommentID']?>">
-                <i class="fa fa-thumbs-o-up"></i>
-                </a>
-            </div>
-            <div class="votesDown<?=$comment['CommentID']?>">
-            
-                <a href="../api/vote_comment.php?story_id=<?=$comment['PostID']?>&type=down&comment_id=<?=$comment['CommentID']?>">
-                <i class="fa  fa-thumbs-o-down"></i>
-                </a>
-            </div>
-        
-            <p><?=$comment['up']-$comment['down']?></p>
-            
 
+        <div class="vote-toggle-comment">
+                <?php
+                    draw_votes_comment($comment['PostID'],$comment['CommentID'],$comment['up'],$comment['down']);
+                ?>
+               
         </div>
+
+        
         <?php if(checkIfUserisLogged($_SESSION['username'],$comment['username'])){
             ?>
             <div class="trash can">

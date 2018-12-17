@@ -107,6 +107,12 @@
 <?php function draw_footer(){   
     ?>
     <header>
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
         <h5>2018 Dabliu, Inc. </h5>
     </header>
     </body>

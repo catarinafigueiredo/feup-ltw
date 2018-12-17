@@ -158,5 +158,18 @@ function getDownVotes($storyid){
     return $user;
 }
 
-
+function getUpVotesComment($comment_id){
+    $db= Database::instance()->db();
+    $stmt= $db->prepare('SELECT up FROM Comment WHERE  CommentID=? ');
+    $stmt->execute(array($comment_id));
+    $user= $stmt->fetch();
+    return $user;
+}
+function getDownVotesComment($comment_id){
+    $db= Database::instance()->db();
+    $stmt= $db->prepare('SELECT down FROM Comment WHERE  CommentID=? ');
+    $stmt->execute(array($comment_id));
+    $user= $stmt->fetch();
+    return $user;
+}
 ?>

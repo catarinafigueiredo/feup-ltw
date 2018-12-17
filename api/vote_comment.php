@@ -6,9 +6,9 @@ include_once('../templates/tpl_story.php');
 include_once('../database/db_story.php');
 include_once('../database/db_vote.php');
 
-$storyid= $_GET['story_id'];
-$type= $_GET['type'];
-$comment_id= $_GET['comment_id'];
+$storyid= $_POST['story_id'];
+$type= $_POST['type'];
+$comment_id= $_POST['comment_id'];
 
 
 $story = reset(getStory($storyid));
@@ -60,6 +60,9 @@ if($type=="up"){
    
 
 }
+$CommentsUp=getUpVotesComment($comment_id);
+$CommentsDown=getDownVotesComment($comment_id);
+draw_votes_comment($storyid,$comment_id,$CommentsUp['up'],$CommentsDown['down']);
 //votesUp<?=$story['postID']
 
 //header('Location: ../pages/inicialpage.php#votesUp?story_id=$storyid');
