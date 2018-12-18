@@ -18,6 +18,7 @@
                     <nav>
                     
                         <div class = "lista_css_container">
+<<<<<<< HEAD
                             <div class = "search_div">    
                                 <form action="search.php" method="get">  
                                     <input type="text" name="key_word" class ="search_bar" placeholder="Search.."> 
@@ -39,6 +40,28 @@
                                     </div>    
                                     </div>                  
                                 </div>
+=======
+                        <div class = "search_div">    
+                            <form action="search.php" method="get">  
+                                <input type="text" name="key_word" class ="search_bar" placeholder="Search.."> 
+                                    <button type="submit">  
+                                        <span>Search</span>
+                                    </button>
+                            </form>  
+                            <div class = "lista_css">
+                                <div class = "buttons_test"><a href="inicialpage.php" style="text-decoration:none">Página inicial</a></div> 
+                                <div class="dropdown">
+                                    <button class="dropbtn" ><?=$_SESSION['username']?><?=draw_user_image($_SESSION['username'],"avatarSmall")?> <i class="fa fa-angle-down"></i> </button>
+                                     <div class="dropdown-content">
+                                        <a value ="Link 1" href ="../pages/personalspace.php">PersonalSpace</a>
+                                        <a href ="../pages/usersettings.php">Settings</a>
+                                        <a href ="../pages/createstory.php">Create</a>
+                                        <a href ="../actions/action_logout.php">Log Out</a>
+                                    </div>
+                                </div>    
+                            </div>                  
+                        </div>
+>>>>>>> 5533cebecb03146505a2d95c5fa0c06434286c43
                     </nav>
                <?php } ?>
                <?php if($username == null){?>

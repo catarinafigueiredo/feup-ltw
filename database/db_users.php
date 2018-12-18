@@ -10,7 +10,12 @@ include_once('../includes/database.php');
 
 }
 
+<<<<<<< HEAD
 function UserExist($username){
+=======
+
+function UserExist($username,$password){
+>>>>>>> 5533cebecb03146505a2d95c5fa0c06434286c43
     $db= Database::instance()->db();
     $stmt= $db->prepare('SELECT * FROM user WHERE username = ?');
     $stmt->execute(array($username));
@@ -21,6 +26,13 @@ function UserExist($username){
 function get_users_by_name($information){
     $db=Database::instance()->db();
     $stmt=$db->prepare('SELECT * FROM user where username LIKE ?');
+    $stmt->execute(array($information));
+    return $stmt->fetchAll();
+}
+
+function get_users_by_name($information){
+    $db=Database::instance()->db();
+    $stmt=$db->prepare('SELECT * FROM user where username = ?');
     $stmt->execute(array($information));
     return $stmt->fetchAll();
 }

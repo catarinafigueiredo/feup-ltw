@@ -35,6 +35,16 @@ body {
     border: none;
 }
 
+.search_div{
+    display: flex;
+    margin-right: 5em;
+    justify-content: flex-end;
+}
+
+.search_div > *{
+    float: right;
+}
+
 
 
 /* Dropdown Button */
@@ -151,9 +161,15 @@ a {
 } 
 
 .lista_css {
+<<<<<<< HEAD
     padding: 10px 0px;  
     justify-content: space-around;
     display: flex;  
+=======
+    padding: 10px 0px;
+    background:#000000;
+    display: flex;
+>>>>>>> 5533cebecb03146505a2d95c5fa0c06434286c43
   }
   .lista_css_container h1{
     margin-left: 10px;
@@ -461,14 +477,20 @@ a {
 
 /* Search_BAR*/
 
+<<<<<<< HEAD
 .search_div {
     width: 130px;
     background: #000000;
+=======
+.search_bar {
+    width: 130px;
+>>>>>>> 5533cebecb03146505a2d95c5fa0c06434286c43
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
   }
   
   /* When the input field gets focus, change its width to 100% */
+<<<<<<< HEAD
   .search_div:focus {
     width: 80%;
   } 
@@ -492,3 +514,8 @@ a {
 
 
   
+=======
+  .search_bar:focus {
+    width: 80%;
+  } 
+>>>>>>> 5533cebecb03146505a2d95c5fa0c06434286c43

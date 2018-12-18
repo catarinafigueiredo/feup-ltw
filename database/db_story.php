@@ -18,7 +18,11 @@ function getAllStories(){
 
 function get_stories_by_name($information){
     $db=Database::instance()->db();
+<<<<<<< HEAD
     $stmt= $db->prepare("SELECT * FROM Post WHERE Title LIKE ?");
+=======
+    $stmt= $db->prepare('SELECT * FROM Post WHERE Title LIKE ?');
+>>>>>>> 5533cebecb03146505a2d95c5fa0c06434286c43
     $stmt->execute(array($information));
     return $stmt->fetchAll();
 }
