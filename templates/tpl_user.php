@@ -34,7 +34,9 @@
     <h4>Email: <?=$user['email']?></h4>
     <h4>Born in: <?=$user['DataNascimento']?></h4>
 
-    <?php if($user['username']==$_SESSION['username']){
+    <?php 
+    if (isset($_SESSION['username']))
+        if($user['username']==$_SESSION['username']){
         ?>
 
     <div class="edit profile">

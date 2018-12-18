@@ -1,6 +1,7 @@
 <?php function draw_login(){
     ?>
-    <section id="login">
+    <div id="login">
+        <body>
         <header>
             <div class = "logincontainer">
             <div class = "login">
@@ -18,7 +19,8 @@
             </div>
             </div>
         </header>
-    </section>
+    </body>
+</div>
     <?php } ?>
 
     <?php function draw_signup(){
@@ -43,5 +45,5 @@
                     </div>
                     </div>
                 </header>
-        </section>
+                </body>
  <?php   }?>

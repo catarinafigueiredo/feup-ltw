@@ -16,6 +16,13 @@ function getAllStories(){
 
 }
 
+function get_stories_by_name($information){
+    $db=Database::instance()->db();
+    $stmt= $db->prepare("SELECT * FROM Post WHERE Title LIKE ?");
+    $stmt->execute(array($information));
+    return $stmt->fetchAll();
+}
+
 
 
 function getStory($postID){
@@ -23,7 +30,6 @@ function getStory($postID){
     $stmt= $db->prepare('SELECT * FROM Post WHERE postID=? ');
     $stmt->execute(array($postID));
     return $stmt->fetchAll();
-
 }
 
 function getAllComments($postID){
