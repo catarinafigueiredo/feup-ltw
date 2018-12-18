@@ -9,6 +9,7 @@ if (!isset($_SESSION['username']))
     draw_header(null);
 else{
     draw_header($_SESSION['username']);
+    draw_message();
     $userInfo= getUserInformation($_SESSION['username']);
     //echo $userInfo;
     draw_users_settings($userInfo);

@@ -15,11 +15,11 @@ else
     draw_header($_SESSION['username']); 
 $information= "%{$_GET['key_word']}%";
 $user = get_users_by_name($information);
-if(sizeof($user) == 1)
+if(sizeof($user) >= 1)
     draw_user($user);
 
 $stories = get_stories_by_name($information);
-if(sizeof($stories) > 1)
+if(sizeof($stories) >= 1)
     draw_stories($stories);
 
 

@@ -23,6 +23,8 @@ create_category();
 //draw_categories($categories);
 draw_order_buttons();
 
+draw_subscribe_category();
+
 
 
 

@@ -35,15 +35,6 @@ body {
     border: none;
 }
 
-.search_div{
-    display: flex;
-    margin-right: 5em;
-    justify-content: flex-end;
-}
-
-.search_div > *{
-    float: right;
-}
 
 
 /* Dropdown Button */
@@ -470,14 +461,15 @@ a {
 
 /* Search_BAR*/
 
-.search_bar {
+.search_div {
     width: 130px;
+    background: #000000;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
   }
   
   /* When the input field gets focus, change its width to 100% */
-  .search_bar:focus {
+  .search_div:focus {
     width: 80%;
   } 
 

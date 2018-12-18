@@ -17,20 +17,24 @@ if ( !preg_match ("/^[a-zA-Z0-9]+$/", $username)) {
     die(header('Location: ../pages/signup.php'));
   }
   try {
-      if(!UserExist($username,$password)){
+      if(!UserExist($username)){
         if($password == $passwordAgain){
           CreateUser($username, $password, $name, $date, $email);
           $_SESSION['username'] = $username;
           $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Signed up and logged in!');
           header('Location: ../pages/inicialpage.php');
         }
+        else{
+            $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Passwords don´t match!');
+            header('Location: ../pages/signup.php');
+        }
       }else{
-            $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Failed to signup!');
-      }
+            $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username already exists!');
+            header('Location: ../pages/signup.php');
+          }
    
   } catch (PDOException $e) { // não esta a funcionar
     die($e->getMessage());
   
   }
-  header('Location: ../pages/signup.php');
 ?>

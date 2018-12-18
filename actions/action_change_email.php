@@ -16,6 +16,6 @@ else{
     echo $username;
     $_SESSION['messages'][]=array('type'=>'error', 'content'=>'Unknown password!');
 }
-header('Location: ../pages/personalspace.php');
+header('Location: ../pages/usersettings.php');
 
 ?>

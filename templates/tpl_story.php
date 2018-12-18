@@ -60,7 +60,10 @@
 
 <?php } ?>
 
+<?php function draw_subscribe_category(){ ?>
+    
 
+<?php } ?>
 
 
 <?php function draw_stories($stories){
@@ -107,24 +110,27 @@
                     <a href="../pages/story.php?story_id=<?=$story['postID']?>">
                     <i class="fa fa-comment"></i>
                     </a>
-            </div>
-            <?php if(checkIfUserisLogged($_SESSION['username'],$story['username'])){
-                ?>
-                <div class="trash-can">
-                    <a id="delete-story">
-                    <input  type="hidden" name="story_id" value="<?=$story['postID']?>">
-                    <input type="hidden" name="place" value="allStory">   
-                    <i class="fa fa-trash"></i>
-                    </a>
-                    </a>
-                </div>
-        </div>
-        <?php }?>
-        
+            </div>x
+                <?php 
+                if(isset($_SESSION['username']))
+                    if(checkIfUserisLogged($_SESSION['username'],$story['username'])){
+                    ?>
+                    <div class="trash-can">
+                        <a id="delete-story">
+                        <input  type="hidden" name="story_id" value="<?=$story['postID']?>">
+                        <input type="hidden" name="place" value="allStory">   
+                        <i class="fa fa-trash"></i>
+                        </a>
+                    </div>
+            <?php }?>
 
-        
-        
-        
+
+            <div id='comments'>
+                   <span>hello jas</span>
+                    <i class="fa fa-comment"></i>
+                    </a>
+            </div>
+        </div>
     </article>
 
 <?php }?> 
@@ -224,10 +230,10 @@
                 </form>
             </div>
         </div>
-        <?php if(checkIfUserisLogged($_SESSION['username'],$story['username'])){
-            ?>
-             
-            
+
+        <?php 
+            if(checkIfUserisLogged($_SESSION['username'],$story['username'])){
+            ?> 
             <div class="trash_can">
                 <a href="../api/delete_storyOnly.php?story_id=<?=$story['postID']?>">
                 <i class="fa fa-trash"></i>
