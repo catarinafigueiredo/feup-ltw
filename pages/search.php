@@ -12,7 +12,6 @@ include_once('../database/db_category.php');
 if (!isset($_SESSION['username']))
     draw_header(null);
 else
-<<<<<<< HEAD
     draw_header($_SESSION['username']); 
 $information= "%{$_GET['key_word']}%";
 $user = get_users_by_name($information);
@@ -21,18 +20,6 @@ if(sizeof($user) >= 1)
 
 $stories = get_stories_by_name($information);
 if(sizeof($stories) >= 1)
-=======
-    draw_header($_SESSION['username']);
-
-$information= $_GET['key_word'];
-
-$user = get_users_by_name($information);
-if(sizeof($user) == 1)
-    draw_user($user);
-
-$stories = get_stories_by_name($information);
-if(sizeof($stories) > 1)
->>>>>>> 5533cebecb03146505a2d95c5fa0c06434286c43
     draw_stories($stories);
 
 

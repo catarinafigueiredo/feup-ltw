@@ -60,10 +60,7 @@
 
 <?php } ?>
 
-<?php function draw_subscribe_category(){ ?>
-    
 
-<?php } ?>
 
 
 <?php function draw_stories($stories){
@@ -110,7 +107,7 @@
                     <a href="../pages/story.php?story_id=<?=$story['postID']?>">
                     <i class="fa fa-comment"></i>
                     </a>
-            </div>x
+            </div>
                 <?php 
                 if(isset($_SESSION['username']))
                     if(checkIfUserisLogged($_SESSION['username'],$story['username'])){
