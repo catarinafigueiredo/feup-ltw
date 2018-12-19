@@ -77,8 +77,8 @@
 
 <?php function draw_story($story){
     ?>
-    <div class="story" >
     <article>
+    <div class="story" >
         <div class = "story_header">
             <span><?=$story['CategoryName']?></span>
             <span style="color: #808080;"> Posted by 
@@ -124,7 +124,7 @@
             <?php }?>
         </div>
     </article>
-    </div>
+
 
 <?php }?> 
 
@@ -196,35 +196,40 @@
     <div class ="story_container">
         <article class="story" >
         <div class="story_focus">
-        <div class = "story_header">
-            <p>Category: <?=$story['CategoryName']?></p>
-            <p>Story by <a href="../pages/user.php?username=<?=$story['username']?>" > <?=$story['username']?></a></p>
-        </div>    
-            <header><h3><a href="../pages/story.php?story_id=<?=$story['postID']?>"><?=$story['Title']?></a></h3></header>
+                     <div class = "story_header">
+                        <span>Category: <?=$story['CategoryName']?></span>
+                        <span>Story by <a href="../pages/user.php?username=<?=$story['username']?>" > <?=$story['username']?></a></span>
+                        <span style="color: #808080;"> on
+                            <?=$story['pDate']?>
+                        </span>
+                    </div>
+                        <div class = "story_content">     
+                            <div class = "story_title">  
+                            <h3><a href="../pages/story.php?story_id=<?=$story['postID']?>"><?=$story['Title']?></a></h3>
+                            </div>
+                            <p><?=nl2br($story['Dados'])?></p>     
+                        </div>
+        
+                                <div class="vote-toggle">
+                                    <?php
+                                    draw_votes($story['postID'],$story['up'],$story['down']);
+                                    ?>
+                                </div>
 
-            <p><?=nl2br($story['Dados'])?></p>
-            <div class="vote-toggle">
-                    <?php
-                        draw_votes($story['postID'],$story['up'],$story['down']);
-                    ?>
-                
-            </div>
-            <button onclick="addcomment()"> 
-                    <i class="fa fa-comment"></i></button>  
+                    <button onclick="addcomment()"> 
+                            <i class="fa fa-comment"></i></button>  
 
-
-            <div id="comment_section"style="display: none;">
-                <div class="new-comments">
-                    <form action="../actions/action_add_comment.php?story_id=<?=$story['postID']?>" method="post" id="new_comment_">
-                    <textarea name="comment" form="new_comment_" placeholder="Enter text here...">
-                    </textarea>
-                    <button type="submit" class="comment_">
-                        Save</i>
-                    </button> 
-                
-                    </form>
-                </div>
-            </div>
+                        <div id="comment_section"style="display: none;">
+                            <div class="new-comments">
+                                <form action="../actions/action_add_comment.php?story_id=<?=$story['postID']?>" method="post" id="new_comment_">
+                                <textarea name="comment" form="new_comment_" placeholder="Enter text here...">
+                                </textarea>
+                                <button type="submit" class="comment_">
+                                    Save</i>
+                                </button> 
+                                </form>
+                            </div>
+                        </div>
 
             <?php 
             if(isset($_SESSION['username']))
@@ -247,7 +252,6 @@
                 }
             }
             </script>
-            
         </article>
         </div>
 </div>

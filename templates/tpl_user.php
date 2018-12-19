@@ -80,14 +80,6 @@
 <?php } ?>
 
 
-
-
-
-
-
-
-
-
 <?php function draw_user_image( $username,$type){?>
     <?php if(file_exists("../assets/".sha1($username).".jpg")){
         ?>
@@ -100,5 +92,20 @@
 
     <?php }else {?>
         <img src="../assets/user.jpg"alt="Avatar" class=<?=$type?>> 
+    <?php }?>     
+<?php }?>
+
+<?php function draw_user_image_settings($username,$type){?>
+    <?php if(file_exists("../assets/".sha1($username).".jpg")){
+        ?>
+        <img style="width:50%; height:50%;" src="../assets/<?=sha1($username)?>.jpg" alt="Avatar" class=<?=$type?>> 
+    <?php }else if(file_exists("../assets/".sha1($username).".png")){?>
+        <img style="width:50%; height:50%;" src="../assets/<?=sha1($username)?>.png"alt="Avatar" class=<?=$type?>> 
+
+    <?php }else if(file_exists("../assets/".sha1($username).".jpeg")){?>
+        <img style="width:50%; height:50%;" src="../assets/<?=sha1($username)?>.jpeg"alt="Avatar" class=<?=$type?>> 
+
+    <?php }else {?>
+        <img style="width:50%; height:50%;" src="../assets/user.jpg"alt="Avatar" class=<?=$type?>> 
     <?php }?>     
 <?php }?>
