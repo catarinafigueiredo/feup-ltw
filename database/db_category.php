@@ -26,6 +26,16 @@ function createNewCategory($category_id){
     return $stmt->fetchAll();
 }
 
+
+function categoryExists($category_id){
+    $db=Database::instance()->db();
+    $stmt= $db->prepare('SELECT * FROM Post where CategoryName = ?');
+    $stmt->execute(array($category_id));
+    $category= $stmt->fetch();
+    return $category !== false ;
+}
+
+
 function insertCategory($category){
     $db=Database::instance()->db();
     $stmt= $db->prepare('INSERT INTO Category VALUES(?)');

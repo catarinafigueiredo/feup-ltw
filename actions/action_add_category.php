@@ -7,7 +7,12 @@ $username =$_SESSION['username'];
 
 $category = htmlentities($_POST['category']);
 
-insertCategory($category);
+if($category != NULL){
+    if(!categoryExists($category))
+        insertCategory($category);
+}
+
+categoryExists();
 
 header("Location: ../pages/inicialpage.php?");
 ?>

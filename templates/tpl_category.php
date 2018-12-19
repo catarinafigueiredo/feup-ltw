@@ -26,7 +26,6 @@
 <?php function category_name($category){
     ?>
     <div class="Category Title">
-
         <h2><a href="../pages/category_story.php?category_id=<?=$category?>"> <?=$category?></a></h2>
     </div>
 <?php }?> 

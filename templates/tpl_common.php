@@ -18,12 +18,13 @@
                     <nav>
                     
                         <div class = "lista_css_container">
-                            <div class = "search_div">    
-                                <form action="search.php" method="get">  
-                                    <input type="text" name="key_word" class ="search_bar" placeholder="Search.."> 
-                                </form>  
-                            </div>
                                 <div class = "lista_css">
+                            
+                                <div class = "buttons_test">    
+                                    <form action="search.php" method="get">  
+                                        <input type="text" name="key_word" class ="search_bar" placeholder="Search.."> 
+                                    </form>  
+                                </div>
                                     <div class = "buttons_test"><a href="inicialpage.php" style="text-decoration:none">Página inicial</a></div> 
                                     <div class="dropdown">
                                         <button class="dropbtn" ><?=$_SESSION['username']?><?=draw_user_image($_SESSION['username'],"avatarSmall")?> <i class="fa fa-angle-down"></i> </button>
@@ -41,12 +42,12 @@
                <?php if($username == null){?>
                 <nav>
                     <div class = "lista_css_container">
+                        <div class = "lista_css">    
                         <div class = "buttons_test">    
                             <form action="search.php" method="get">  
                                 <input type="text" name="key_word" class ="search_bar" placeholder="Search.."> 
                             </form>  
                         </div> 
-                        <div class = "lista_css">    
                             <div class = "buttons_test"><a href="inicialpage.php">Página inicial</a></div>
                             <div class = "buttons_test"><a href="signup.php" style="text-decoration:none">Sign Up</a></div>
                             <div class = "buttons_test"><a href="login.php">Log In</a></div>
@@ -83,18 +84,16 @@
     <header>
         <div class="create_category_button">
             <button onclick="addNewCategory()"> 
-            <span>Create New Category</span></button>  
+            <div class="nc_button">Create New Category</div></button>  
             <div id="sectionI"style="display: none;">
-            <div>
                 <form action="../actions/action_add_category.php?" method="post" id="new_category">
-                    <textarea name="category" form="new_category" placeholder="Enter text here...">
-                    </textarea>
+                <textarea name="category" form="new_category" placeholder="Enter text here...">
+                </textarea>
                     <button type="submit">
                         Create</i>
                     </button> 
                 </form>
             </div>
-        </div>
         </div>
     </header>
    
@@ -131,15 +130,17 @@
 
 <?php function draw_footer(){   
     ?>
-    <header>
-        <br><br><br>
-        <br><br><br>
-        <br><br><br>
-        <br><br><br>
-        <br><br><br>
-        <br><br><br>
-        <h5>2018 Dabliu, Inc. </h5>
-    </header>
+        <div class="background_color">
+            <header>
+                <br><br><br>
+                <br><br><br>
+                <br><br><br>
+                <br><br><br>            
+                    <br><br><br>
+
+                <h5>2018 Dabliu, Inc. </h5>
+            </header>
+        </div>
     </body>
 </html>
 <?php } ?>

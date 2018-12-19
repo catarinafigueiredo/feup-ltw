@@ -7,7 +7,11 @@
   }
 
 body {  
-    background-color: #ffffff6e;
+    background:#dfdddd; 
+}
+
+header{
+    background:#dfdddd; 
 }
 
 .avatarSmall {
@@ -66,8 +70,8 @@ body {
     min-width: 160px;
     z-index: 5;
 }
+
 .headerFixo {
-  
     padding: 10px 10px;
     background: #555;
     color: #f1f1f1;
@@ -93,8 +97,7 @@ body {
     overflow-x:hidden;
 } 
 .create_story_button a:hover{
-    
-    color: rgb(97, 31, 31);
+    color:#ffd600;
 } 
 
 .create_category_button {
@@ -194,79 +197,70 @@ a {
 
 .dropdown:hover .dropbtn {background-color: #111;} 
 
-.formcontainer{
-    display: flex;
-    justify-content: center;   
-    background-color: #ffffff;
-}
-
-.formclass{
-    display: flex;
-    flex-direction: column;  
-    background-color: #5995DA;    
-    border: 1px solid #1207a7;
-}
-
-.formclass h2{
-    background-color: #1207a7;
-    text-align: center;
-    color: #FFF;
-}
-
 .signupfooter{
-    background-color: #1207a7;
+    padding: 1em;
+    color: #0079d3;
+    text-decoration: underline;
+    font-family: 'FuturaStdBold';
     text-align: center;
-    color: #FFF;
 }
+
 
 .formclass input{
     display: flex;
-    margin: 2em 2em 2em 2em;
     padding: 1em 2em 1em 2em;
 }
 
 .submit_b {
     color: #FFF;
-    background-color: #5995DA;
+    background-color: #0079d3;
     font-weight: bold;
     padding: 1em 2em 1em 2em;
     text-align: center;
-    border: 1px solid #1207a7;
+    border: 1px solid #333;
     border-radius: 5px;
 }
 
 .submit_b:hover  {
-    background-color: #1207a7;
+    background-color: #045694;
 } 
 
 .submit_b:active  {
-    background-color: #090544;
+    background-color: #024070;
 } 
 
 .logincontainer{
     display: flex;
+    padding: 2em;
     justify-content: center;   
-    background-color: #aca2a2;
+    background-color: #dfdddd;
 }
 
 .login h2{
-    background-color: #1207a7;
+    background-color: #333;
     text-align: center;
     color: #FFF;
 }
 
 .login{
-    background-color: #5995DA;    
-    border: 1px solid #1207a7;
+    width: 30em;
+    background-color: #b3afaf;    
+    display: flex;
+    flex-direction: column;   
+    border: 1px solid #333;
     border-radius: 7px;
 }
 
-.login input{
+.login_input{
     display: flex;
-    flex-direction: column; 
-    margin: 2em 2em 2em 2em;
-    padding: 1em 2em 1em 2em;
+    flex-direction: column;   
 }
+
+.login_input input{
+   margin: 1em 2em 1em 2em;
+   padding: 1em;
+}
+
 
 .change_pwd_fieldcontainer{
     display: flex;
@@ -307,27 +301,32 @@ a {
     display: flex;
     justify-content: center;   
     flex-direction: column;   
-    /*border: 1px solid #1207a7;*/
 }
 
 .story{
-    background:#fff;
+    background:#c5c5c7;
     width: 800px;
-    border: 1px solid #000000;
     margin: 1em;   
+    border: 1px solid #1207a7;
+}
+
+
+.story_title{
+    margin: 1em 2em 2em 2em;
 }
 
 .story_header{
-    background:#1207a7;
+    background:#333;
+    padding: 1em;
     font-size: 0.8em;
 }
+
 .story_header span{
     margin: 0em 1em 0em 1em;
 }
 
 .story_content{
     background:#c5c5c7;
-    border: 1px solid #000000;  
 }
 
 .story_footer{
@@ -478,6 +477,7 @@ a {
 }
   
   .messages {
+
     max-width: 20em;
     margin: 0 auto; 
     padding: 2em;

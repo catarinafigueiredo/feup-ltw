@@ -77,7 +77,8 @@
 
 <?php function draw_story($story){
     ?>
-    <article class="story" >
+    <div class="story" >
+    <article>
         <div class = "story_header">
             <span><?=$story['CategoryName']?></span>
             <span style="color: #808080;"> Posted by 
@@ -89,13 +90,14 @@
         </div>
 
         <div class = "story_content">
-            <header><h3><a href="../pages/story.php?story_id=<?=$story['postID']?>"><?=$story['Title']?></a></h3></header>
-            
+            <div class = "story_title">
+               <h3><a href="../pages/story.php?story_id=<?=$story['postID']?>"><?=$story['Title']?></a></h3>
+            </div>
             <p><?=nl2br($story['Dados'])?></p>
         </div>
-        <div class = "story_footer">
-        
 
+        <div class = "story_footer">
+    
            <div class="vote-toggle">
                 <?php
                     draw_votes($story['postID'],$story['up'],$story['down']);
@@ -118,17 +120,11 @@
                         <input type="hidden" name="place" value="allStory">   
                         <i class="fa fa-trash"></i>
                         </a>
-                    </div>
+                    </div>  
             <?php }?>
-
-
-            <div id='comments'>
-                   <span>hello jas</span>
-                    <i class="fa fa-comment"></i>
-                    </a>
-            </div>
         </div>
     </article>
+    </div>
 
 <?php }?> 
 
