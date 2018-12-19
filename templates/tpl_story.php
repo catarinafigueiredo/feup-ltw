@@ -47,7 +47,7 @@
              foreach ($categories as $category) {?>
                  <button class="order-button"><p><?=array_values($category)[0]?></p></button>
              <?php } ?>
-            
+            ?>  
         </div>
         <div class="ordered-publications">
             <?php                
@@ -100,7 +100,7 @@
     
            <div class="vote-toggle">
                 <?php
-                    draw_votes($_SESSION['username'],$story['postID'],$story['up'],$story['down']);
+                    draw_votes($story['postID'],$story['up'],$story['down']);
                 ?>
                
             </div>
@@ -128,23 +128,15 @@
 
 <?php }?> 
 
-<?php function draw_votes($username,$story_id,$storyUp,$storyDown){
-    
+<?php function draw_votes($story_id,$storyUp,$storyDown){
     ?>
     <div class="votes">
         
             
             <a id="voto">
             <input  type="hidden" name="story_id" value="<?=$story_id?>">
-            <input  type="hidden" name="type" value="up">   
-
-            <?php if (voteUp($story_id,$username) && !voteDown($story_id,$username)) {?>      
-            <i class="fa fa-thumbs-up"></i>
-            <?php } else {
-                ?>
-                <i class="fa fa-thumbs-o-up"></i>
-
-          <?php  }?>
+            <input  type="hidden" name="type" value="up">           
+            <i class="fa fa-thumbs-o-up"></i>
         
             </a>
         
@@ -154,13 +146,7 @@
             <a id="voto">
             <input  type="hidden" name="story_id" value="<?=$story_id?>">
             <input  type="hidden" name="type" value="down">
-
-            <?php if(voteDown($story_id,$username) && !voteUp($story_id,$username)){?>
-                <i class="fa  fa-thumbs-down"></i>
-           <?php }else{ ?>
-              <i class="fa fa-thumbs-o-down"></i>
-         <?php  } ?>
-            
+            <i class="fa  fa-thumbs-o-down"></i>
             </a>
         
     </div>
@@ -169,7 +155,7 @@
 <?php } ?>
 
 
-<?php function draw_votes_comment($username,$story_id,$comment_id,$commentUp,$commentDown){
+<?php function draw_votes_comment($story_id,$comment_id,$commentUp,$commentDown){
     ?>
     <div class="votes-comment">
         
@@ -177,15 +163,8 @@
         <a id="voto-comment">
         <input  type="hidden" name="story_id" value="<?=$story_id?>">
         <input  type="hidden" name="type" value="up">       
-        <input  type="hidden" name="comment_id" value="<?=$comment_id?>"> 
-        <?php if (voteUpComment($comment_id,$story_id,$username) && !voteDownComment($comment_id,$story_id,$username)) {?>      
-            <i class="fa fa-thumbs-up"></i>
-            <?php } else {
-                ?>
-                <i class="fa fa-thumbs-o-up"></i>
-
-          <?php  }?>     
-        
+        <input  type="hidden" name="comment_id" value="<?=$comment_id?>">      
+        <i class="fa fa-thumbs-o-up"></i>
     
         </a>
         
@@ -195,13 +174,8 @@
         <a id="voto-comment">
         <input  type="hidden" name="story_id" value="<?=$story_id?>">
         <input  type="hidden" name="type" value="down">
-        <input  type="hidden" name="comment_id" value="<?=$comment_id?>">    
-        <?php if(voteDownComment($comment_id,$story_id,$username) && !voteUpComment($comment_id,$story_id,$username)){?>
-                <i class="fa  fa-thumbs-down"></i>
-           <?php }else{ ?>
-              <i class="fa fa-thumbs-o-down"></i>
-         <?php  } ?>  
-        
+        <input  type="hidden" name="comment_id" value="<?=$comment_id?>">      
+        <i class="fa  fa-thumbs-o-down"></i>
         </a>
     
     </div>
@@ -222,35 +196,30 @@
     <div class ="story_container">
         <article class="story" >
         <div class="story_focus">
-                     <div class = "story_header">
-                        <span>Category: <?=$story['CategoryName']?></span>
-                        <span>Story by <a href="../pages/user.php?username=<?=$story['username']?>" > <?=$story['username']?></a></span>
-                        <span style="color: #808080;"> on
-                            <?=$story['pDate']?>
-                        </span>
-                    </div>
+                        <div class = "story_header">
+                            <span>Category: <?=$story['CategoryName']?></span>
+                            <span>Story by <a href="../pages/user.php?username=<?=$story['username']?>" > <?=$story['username']?></a></span>
+                            <span style="color: #808080;"> on
+                                <?=$story['pDate']?>
+                            </span>
+                        </div>
+
                         <div class = "story_content">     
                             <div class = "story_title">  
-                            <h3><a href="../pages/story.php?story_id=<?=$story['postID']?>"><?=$story['Title']?></a></h3>
+                                <h3><a href="../pages/story.php?story_id=<?=$story['postID']?>"><?=$story['Title']?></a></h3>
                             </div>
                             <p><?=nl2br($story['Dados'])?></p>     
                         </div>
-        
-                                <div class="vote-toggle">
-                                    <?php
-                                    draw_votes($story['postID'],$story['up'],$story['down']);
-                                    ?>
-                                </div>
-
-            <p><?=nl2br($story['Dados'])?></p>
-            <div class="vote-toggle">
-                    <?php
-                        draw_votes($_SESSION['username'],$story['postID'],$story['up'],$story['down']);
-                    ?>
                 
-            </div>
-            <button onclick="addcomment()"> 
-                    <i class="fa fa-comment"></i></button>  
+                    <div class = "story_footer2">
+                        <div class="vote-toggle">
+                            <?php
+                            draw_votes($story['postID'],$story['up'],$story['down']);
+                            ?>
+                        </div>
+
+                        <button onclick="addcomment()"> 
+                            <i class="fa fa-comment"></i></button>  
 
                         <div id="comment_section"style="display: none;">
                             <div class="new-comments">
@@ -264,27 +233,30 @@
                             </div>
                         </div>
 
-            <?php 
-            if(isset($_SESSION['username']))
-                if(checkIfUserisLogged($_SESSION['username'],$story['username'])){
-                ?> 
-                <div class="trash_can">
-                    <a href="../api/delete_storyOnly.php?story_id=<?=$story['postID']?>">
-                    <i class="fa fa-trash"></i>
-                    </a>
-                </div>
 
-            <?php }?>
-            <script>
-            function addcomment() {
-                var x = document.getElementById("comment_section");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }
-            </script>
+                    <?php 
+                    if(isset($_SESSION['username']))
+                        if(checkIfUserisLogged($_SESSION['username'],$story['username'])){
+                        ?> 
+                        <div class="trash_can">
+                            <a href="../api/delete_storyOnly.php?story_id=<?=$story['postID']?>">
+                            <i class="fa fa-trash"></i>
+                            </a>
+                        </div>
+
+                    <?php }?>
+                    
+                    <script>
+                    function addcomment() {
+                        var x = document.getElementById("comment_section");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                        } else {
+                            x.style.display = "none";
+                        }
+                    }
+                    </script>
+            </div>
         </article>
         </div>
 </div>
@@ -328,7 +300,7 @@
 
         <div class="vote-toggle-comment">
                 <?php
-                    draw_votes_comment($_SESSION['username'],$comment['PostID'],$comment['CommentID'],$comment['up'],$comment['down']);
+                    draw_votes_comment($comment['PostID'],$comment['CommentID'],$comment['up'],$comment['down']);
                 ?>
                
         </div>

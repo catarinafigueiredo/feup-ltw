@@ -5,7 +5,6 @@ include_once('../templates/tpl_auth.php');
 include_once('../templates/tpl_category.php');
 include_once('../templates/tpl_story.php');
 include_once('../database/db_story.php');
-include_once('../database/db_vote.php');
 include_once('../database/db_category.php');
 
 $category_id= $_GET['category_id'];

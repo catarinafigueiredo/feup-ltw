@@ -2,7 +2,6 @@
 include_once('../includes/session.php');
 include_once('../database/db_order.php');
 include_once('../database/db_users.php');
-include_once('../database/db_vote.php');
 include_once('../templates/tpl_story.php');
 
 $username=$_POST['username'];

@@ -33,8 +33,8 @@ function getPopularPublications(){
 function getSubscribedPublications($username){
     
     $db=Database::instance()->db();
-    $stmt= $db->prepare('SELECT CategoryName FROM SubscribeCategory WHERE username=? ');
-    $stmt->execute(array($username));
+    $stmt= $db->prepare('SELECT CategoryName FROM SubscribeCategory ');
+    $stmt->execute(array());
 
     $categories= $stmt->fetchAll(); 
     $story=array();

@@ -3,7 +3,6 @@ include_once('../includes/session.php');
 include_once('../database/db_order.php');
 include_once('../templates/tpl_story.php');
 include_once('../templates/tpl_auth.php');
-include_once('../database/db_vote.php');
 include_once('../database/db_category.php');
 
 if(isset($_SESSION['username'])){
@@ -38,19 +37,16 @@ if(isset($_SESSION['username'])){
                     draw_login();
                 }
 
-        draw_stories(getPopularPublications());
-        break;
-    case 'Subscribed':
-        draw_stories(getSubscribedPublications($username));
-        break;
-    default:
-        
-        foreach($categories as $category){
-            if($order== $category['CategoryName'] ){
-            $i=1;
-        
-            $stories= getAllStoriesCat($category['CategoryName']);
-            draw_stories($stories);
+            break;
+        default:
+            
+            foreach($categories as $category){
+                if($order== $category['CategoryName'] ){
+                $i=1;
+            
+                $stories= getAllStoriesCat($category['CategoryName']);
+                draw_stories($stories);
+                }
             }
             if($i==0){
             draw_stories(getRecentPublications());}
