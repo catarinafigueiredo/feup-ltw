@@ -4,8 +4,9 @@ include_once('../database/db_order.php');
 include_once('../database/db_users.php');
 include_once('../templates/tpl_story.php');
 
+$username=$_POST['username'];
 
-$username=$_SESSION['username'];
+//$username=$_SESSION['username'];
 $type=$_POST['type'];
 
 switch ($type) {

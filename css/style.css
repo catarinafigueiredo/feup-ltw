@@ -214,6 +214,83 @@ a {
     color:#ffd600;
 } 
 
+.formcontainer{
+    display: flex;
+    justify-content: center;   
+    background-color: #ffffff;
+}
+
+.formclass{
+    display: flex;
+    flex-direction: column;  
+    background-color: #5995DA;    
+    border: 1px solid #1207a7;
+}
+
+.formclass h2{
+    background-color: #1207a7;
+    text-align: center;
+    color: #FFF;
+}
+/* width */
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
+.Subscribe_cat{
+    background-color: #2b2b55;  
+    color: white;
+    margin: 0em 10em 0em 1em;
+    padding: 2em 2em 2em 2em;
+    text-align: center;
+    font-size: 16px;
+    border:1em ;
+    width: 200px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    position: fixed;
+    z-index:1;
+    display: flex;
+    top:13em;
+    left:64em;
+    overflow-x:hidden;
+    display: flex;
+    display:none;
+}
+.UnSubscribe_cat{
+    background-color: #2b2b55;  
+    color: white;
+    margin: 0em 10em 0em 1em;
+    padding: 2em 2em 2em 2em;
+    text-align: center;
+    font-size: 16px;
+    border:1em ;
+    width: 200px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    position: fixed;
+    z-index:1;
+    display: flex;
+    top:13em;
+    left:64em;
+    overflow-x:hidden;
+    display: flex;
+    display:none;
+}
 .signupfooter{
     padding: 1em;
     color: #0079d3;
@@ -365,11 +442,11 @@ a {
 }
 
 .article-container #orderDiv{
-  height: 75%;
+  height: 80%;
   width: 10em;
   position: fixed;
   z-index: 1;
-  top: 10em;
+  top: 7.3em;
   left: 0;
   background-color: #111;
   overflow-x: hidden;

@@ -59,7 +59,11 @@
 
 <?php function draw_comment_story_buttons($username){
     ?>
-   <div class="article-container">
+   <div class="article-container-story">
+        <a id="issoo">  
+        <input  type="hidden" name="username" value="<?=$username?>">
+        </a>
+        
         <div class="chooseCorS" id="chooseCorSDiv">
             <button class="chooseCorS-button active"><p>Storys</p></button>
             <button class="chooseCorS-button"><p>Comments</p></button>

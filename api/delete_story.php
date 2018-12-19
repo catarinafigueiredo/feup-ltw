@@ -42,8 +42,12 @@ switch ($type) {
 
         draw_stories(getSubscribedPublications($username));
         break;
+    case 'UserStorys':
+
+        draw_stories(getRecentPublicationsUser($username));
+        break;
     default:
-         draw_stories(getRecentPublications());
+        draw_stories(getRecentPublications());
         break;
 }
 

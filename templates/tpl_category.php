@@ -30,4 +30,23 @@
     </div>
 <?php }?> 
 
+<?php function  draw_subscribe_category(){
+    ?>
+    
+    <header class="subs" id="subs" >
+        
+        <div class="Subscribe_cat"  id="Subscribe_cat">
+            <button class="button_subscribe"><p>Subscribe</p></button>
+        </div>
+    </header> 
+<?php } ?>
+
+<?php function  draw_unsubscribe_category(){
+    ?>
+    <header >
+        <div class="UnSubscribe_cat"  id="UnSubscribe_cat">
+            <button class="Unbutton_subscribe"><p>UnSubscribe</p></button>
+        </div>
+    </header> 
+<?php } ?>
 

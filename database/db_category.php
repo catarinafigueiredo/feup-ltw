@@ -42,4 +42,12 @@ function insertCategory($category){
     $stmt->execute(array($category));
     return $stmt->fetchAll();
 }
+
+function  subscribeCategory($username,$category){
+    $db=Database::instance()->db();
+    $stmt= $db->prepare('INSERT INTO SubscribeCategory VALUES(?,?)');
+    $stmt->execute(array($username,$category));
+    return $stmt->fetchAll();
+
+}
 ?>
