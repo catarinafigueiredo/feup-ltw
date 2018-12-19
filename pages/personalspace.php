@@ -4,6 +4,7 @@ include_once('../templates/tpl_common.php');
 include_once('../templates/tpl_user.php');
 include_once('../templates/tpl_story.php');
 include_once('../database/db_users.php');
+include_once('../database/db_vote.php');
 include_once('../database/db_order.php');
 
 // Verify if user is logged in

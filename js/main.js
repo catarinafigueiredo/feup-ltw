@@ -201,17 +201,13 @@ if(btns){
             var Y = document.getElementById("UnSubscribe_cat");
             //checkIfValidOrder(order);
             //checkIfCategoryNotSubscribed(order);
-            if (order!="Recent" && order != "Oldest" && order !="Subscribed" && order !="Popular") {
+           /* if (order!="Recent" && order != "Oldest" && order !="Subscribed" && order !="Popular") {
 
                 // ver se order está subscrito
-               
-                
-                 
-
                 x.style.display = "block";
             } else {
                 x.style.display = "none";
-            }
+            }*/
               
             
             let request = new XMLHttpRequest();

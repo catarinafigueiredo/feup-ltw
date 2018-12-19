@@ -172,4 +172,50 @@ function getDownVotesComment($comment_id){
     $user= $stmt->fetch();
     return $user;
 }
+
+function voteUp($storyid,$username){
+    $db= Database::instance()->db();
+    $stmt= $db->prepare('SELECT * FROM Vote WHERE  CommentID is Null and PostID =? and username=? and typeVote=?');
+    $stmt->execute(array($storyid,$username,'up'));
+    $user= $stmt->fetch();
+    if( empty($user)){
+           return false;
+       }else{   
+            return true;
+       }
+}
+function voteDown($storyid,$username){
+    $db= Database::instance()->db();
+    $stmt= $db->prepare('SELECT * FROM Vote WHERE  CommentID is Null and PostID =? and username=? and typeVote=?');
+    $stmt->execute(array($storyid,$username,'down'));
+    $user= $stmt->fetch();
+    if( empty($user)){
+           return false;
+       }else{ 
+            return true;
+       }
+}
+function voteUpComment($commentid,$storyid,$username){
+    $db= Database::instance()->db();
+    $stmt= $db->prepare('SELECT * FROM Vote WHERE  CommentID=? and PostID =? and username=? and typeVote=?');
+    $stmt->execute(array($commentid,$storyid,$username,'up'));
+    $user= $stmt->fetch();
+    if( empty($user)){
+           return false;
+       }else{   
+            return true;
+       }
+}
+function voteDownComment($commentid,$storyid,$username){
+    $db= Database::instance()->db();
+    $stmt= $db->prepare('SELECT * FROM Vote WHERE  CommentID = ? and PostID =? and username=? and typeVote=?');
+    $stmt->execute(array($commentid,$storyid,$username,'down'));
+    $user= $stmt->fetch();
+    if( empty($user)){
+           return false;
+       }else{ 
+            return true;
+       }
+}
+
 ?>
