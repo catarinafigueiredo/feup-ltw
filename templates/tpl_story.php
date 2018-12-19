@@ -192,60 +192,65 @@
 
 <?php function draw_one_story_only($story){
     ?>
-    <article class="story" >
-    
-        <header><h3><a href="../pages/story.php?story_id=<?=$story['postID']?>"><?=$story['Title']?></a></h3></header>
-       
-        <p>Category: <?=$story['CategoryName']?></p>
-        <p>Story by <a href="../pages/user.php?username=<?=$story['username']?>" > <?=$story['username']?></a></p>
-        <p><?=nl2br($story['Dados'])?></p>
-        
-   
-        <div class="vote-toggle">
-                <?php
-                    draw_votes($story['postID'],$story['up'],$story['down']);
-                ?>
-               
-        </div>
-        <button onclick="addcomment()"> 
-                <i class="fa fa-comment"></i></button>  
 
+    <div class ="story_container">
+        <article class="story" >
+        <div class="story_focus">
+        <div class = "story_header">
+            <p>Category: <?=$story['CategoryName']?></p>
+            <p>Story by <a href="../pages/user.php?username=<?=$story['username']?>" > <?=$story['username']?></a></p>
+        </div>    
+            <header><h3><a href="../pages/story.php?story_id=<?=$story['postID']?>"><?=$story['Title']?></a></h3></header>
 
-        <div id="comment_section"style="display: none;">
-            <div class="new-comments">
-                <form action="../actions/action_add_comment.php?story_id=<?=$story['postID']?>" method="post" id="new_comment_">
-                <textarea name="comment" form="new_comment_" placeholder="Enter text here...">
-                </textarea>
-                <button type="submit" class="comment_">
-                    Save</i>
-                </button> 
-            
-                </form>
+            <p><?=nl2br($story['Dados'])?></p>
+            <div class="vote-toggle">
+                    <?php
+                        draw_votes($story['postID'],$story['up'],$story['down']);
+                    ?>
+                
             </div>
-        </div>
+            <button onclick="addcomment()"> 
+                    <i class="fa fa-comment"></i></button>  
 
-        <?php 
-            if(checkIfUserisLogged($_SESSION['username'],$story['username'])){
-            ?> 
-            <div class="trash_can">
-                <a href="../api/delete_storyOnly.php?story_id=<?=$story['postID']?>">
-                <i class="fa fa-trash"></i>
-                </a>
+
+            <div id="comment_section"style="display: none;">
+                <div class="new-comments">
+                    <form action="../actions/action_add_comment.php?story_id=<?=$story['postID']?>" method="post" id="new_comment_">
+                    <textarea name="comment" form="new_comment_" placeholder="Enter text here...">
+                    </textarea>
+                    <button type="submit" class="comment_">
+                        Save</i>
+                    </button> 
+                
+                    </form>
+                </div>
             </div>
 
-        <?php }?>
-        <script>
-        function addcomment() {
-            var x = document.getElementById("comment_section");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
+            <?php 
+            if(isset($_SESSION['username']))
+                if(checkIfUserisLogged($_SESSION['username'],$story['username'])){
+                ?> 
+                <div class="trash_can">
+                    <a href="../api/delete_storyOnly.php?story_id=<?=$story['postID']?>">
+                    <i class="fa fa-trash"></i>
+                    </a>
+                </div>
+
+            <?php }?>
+            <script>
+            function addcomment() {
+                var x = document.getElementById("comment_section");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
             }
-        }
-        </script>
-        
-    </article>
+            </script>
+            
+        </article>
+        </div>
+</div>
 
 <?php }?> 
 

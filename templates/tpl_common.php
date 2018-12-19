@@ -56,7 +56,7 @@
                             <div class = "buttons_test_drop">
                                 <div class="dropdown">
                                         <button class="dropbtn" ><i class="fa fa-user-circle"></i> <i class="fa fa-angle-down"></i> </button>
-                                            <div class="dropdown-content"  style="left:91.5%;">
+                                            <div class="dropdown-content"  style="left:91%;">
                                             <a href ="../pages/signup.php">Sign up </a>
                                             <a href ="../pages/login.php">Login</a>
                                             </div>
@@ -75,7 +75,7 @@
     ?>
     <header>
         <div class="create_story_button">
-            <h5> <a href="createstory.php">Create Story</a> </h5>
+            <h5> <a style = "font-family:'Quicksand', sans-serif;" href="createstory.php">Create Story</a> </h5>
         </div>
     </header>
    
@@ -85,19 +85,13 @@
 <?php function create_category(){   
     ?>
     <header>
-        <div class="create_category_button">
             <button onclick="addNewCategory()"> 
-            <div class="nc_button">Create New Category</div></button>  
-            <div id="sectionI"style="display: none;">
-                <form action="../actions/action_add_category.php?" method="post" id="new_category">
-                <textarea name="category" form="new_category" placeholder="Enter text here...">
-                </textarea>
-                    <button type="submit">
-                        Create</i>
-                    </button> 
-                </form>
-            </div>
-        </div>
+            <div class="create_category_button">Create New Category</div></button>  
+                <div class="create_category_button_ins" id="sectionI"style="display: none;">
+                    <form action="../actions/action_add_category.php?" method="post" id="new_category"> 
+                        <input style="padding:1em;" type="text" name="category" form="new_category" placeholder="New Category...">
+                    </form>
+                </div>
     </header>
    
 

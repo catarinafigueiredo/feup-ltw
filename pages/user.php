@@ -11,6 +11,7 @@ if (!isset($_SESSION['username']))
     draw_header(null);
 else{
     draw_header($_SESSION['username']);
+}
     $userInfo= getUserInformation($username);
     draw_user($userInfo);
     $user= reset($userInfo);
@@ -21,6 +22,5 @@ else{
     draw_comments($comments_user);
   
     //print_r($userInfo);
-}
 draw_footer();
 ?>
