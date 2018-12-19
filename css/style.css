@@ -31,16 +31,20 @@ header{
 
   .buttons_test{
     color: white;
-    margin: 1em;
+    margin: auto;
     text-align: center;
-    padding: 1em;
+    padding: 1em 1em 1em 1em;
     font-size: 16px;
     border: none;
 }
 
-    .buttons_test :hover{
-        color:#ffd600;
-    }
+.buttons_test_drop{
+    margin: auto;
+}
+
+.buttons_test :hover{
+    color:#ffd600;
+}
 
 
 
@@ -48,8 +52,10 @@ header{
 .dropbtn {
     background-color: #5a5964;
     color: white;
-    padding: 16px;
-    margin:1em;
+    text-align: center;
+    margin:auto;
+    margin-left: 1em;
+    display: flex; 
     font-size: 16px;
     border: none;
 }
@@ -64,11 +70,6 @@ header{
     position: absolute;
     background-color: #555;
     border: 1px solid #111; 
-    padding: 16px;
-    margin-left: 1em;
-    margin-right: 2em;
-    min-width: 160px;
-    z-index: 5;
 }
 
 .headerFixo {
@@ -155,14 +156,14 @@ a {
 } 
 
 .lista_css {
-    padding: 10px 0px;  
+    padding: 0em 1em 0em 1em;  
     justify-content: space-around;
     display: flex;  
   }
+  
   .lista_css_container h1{
     margin-left: 10px;
     text-align: center;
-    
   }
 
 
@@ -189,13 +190,19 @@ a {
     display: block;
 }
 
-.dropdown-content a:hover {background-color: #111;}  
+.dropdown-content a:hover {
+    background-color: #111;
+    color:#ffd600;
+}  
 
 
 .dropdown:hover .dropdown-content {display: block;}
 
 
-.dropdown:hover .dropbtn {background-color: #111;} 
+.dropdown:hover .dropbtn {
+    background-color: #111;
+    color:#ffd600;
+} 
 
 .signupfooter{
     padding: 1em;

@@ -26,15 +26,17 @@
                                     </form>  
                                 </div>
                                     <div class = "buttons_test"><a href="inicialpage.php" style="text-decoration:none">Página inicial</a></div> 
-                                    <div class="dropdown">
-                                        <button class="dropbtn" ><?=$_SESSION['username']?><?=draw_user_image($_SESSION['username'],"avatarSmall")?> <i class="fa fa-angle-down"></i> </button>
-                                        <div class="dropdown-content">
-                                            <a value ="Link 1" href ="../pages/personalspace.php">PersonalSpace</a>
-                                            <a href ="../pages/usersettings.php">Settings</a>
-                                            <a href ="../pages/createstory.php">Create</a>
-                                            <a href ="../actions/action_logout.php">Log Out</a>
-                                        </div>
-                                    </div>    
+                                        <div class="dropdown">
+                                            <div class = "buttons_test_drop" style="margin-top:4px;">
+                                                <button class="dropbtn"><?=$_SESSION['username']?><?=draw_user_image($_SESSION['username'],"avatarSmall")?> <i class="fa fa-angle-down"></i> </button>
+                                                <div class="dropdown-content" style="left:87.5%;">
+                                                    <a value ="Link 1" href ="../pages/personalspace.php">PersonalSpace</a>
+                                                    <a href ="../pages/usersettings.php">Settings</a>
+                                                    <a href ="../pages/createstory.php">Create</a>
+                                                    <a href ="../actions/action_logout.php">Log Out</a>
+                                                </div>
+                                            </div>    
+                                        </div>         
                                     </div>                  
                                 </div>
                     </nav>
@@ -51,14 +53,15 @@
                             <div class = "buttons_test"><a href="inicialpage.php">Página inicial</a></div>
                             <div class = "buttons_test"><a href="signup.php" style="text-decoration:none">Sign Up</a></div>
                             <div class = "buttons_test"><a href="login.php">Log In</a></div>
-                            <div class="dropdown">
-                                    <button class="dropbtn" ><i class="fa fa-user-circle"></i> <i class="fa fa-angle-down"></i> </button>
-                                     <div class="dropdown-content">
-                        
-                                        <a href ="../pages/signup.php">Sign up </a>
-                                        <a href ="../pages/login.php">Login</a>
-                                    </div>
-                            </div>    
+                            <div class = "buttons_test_drop">
+                                <div class="dropdown">
+                                        <button class="dropbtn" ><i class="fa fa-user-circle"></i> <i class="fa fa-angle-down"></i> </button>
+                                            <div class="dropdown-content"  style="left:91.5%;">
+                                            <a href ="../pages/signup.php">Sign up </a>
+                                            <a href ="../pages/login.php">Login</a>
+                                            </div>
+                                </div>  
+                            </div>                                
                         </div>
                     </div>
                 </nav>
