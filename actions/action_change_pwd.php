@@ -14,6 +14,7 @@ if(validUserPassword($username,$password)){
         $options= ['cost'=>12];
         $stmt=$db->prepare('UPDATE user SET password = ? WHERE username = ?');
         $stmt->execute(array(password_hash($newpassword,PASSWORD_DEFAULT,$options), $username));
+        $_SESSION['messages'][]=array('type'=>'success', 'content'=>'Changed name successfully!');
     }
     else{
         $_SESSION['messages'][]=array('type'=>'error', 'content'=>'Password do not match!');

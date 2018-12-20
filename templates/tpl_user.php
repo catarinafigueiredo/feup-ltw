@@ -14,8 +14,48 @@
 
 <?php } ?>
 
+
+
 <?php function draw_user($userArray){
+    $user=reset($userArray);
+    ?>
+    <header>
+       
+        
+    </header>
+
+    <div class="user_draw_info">
+    <section class="userInfo">
+        <body>
+            <?php draw_user_image($user['username'],"avatarBig"); ?>
     
+        <?php if($user['nome']!= null)
+            ?>
+            <h2>nome: <?=$user['nome']?></h2>
+
+        <h4>Username: <?=$user['username']?></h4>
+        <h4>Email: <?=$user['email']?></h4>
+        <h4>Born in: <?=$user['DataNascimento']?></h4>
+
+        <?php 
+        if (isset($_SESSION['username']))
+            if($user['username']==$_SESSION['username']){
+            ?>
+
+        <div class="edit profile">
+            <p style="margin-top: 1em;"><a href= "../pages/usersettings.php">Edit profile</a></p>
+        </div>
+        
+    <?php }?>
+
+        </body>
+    </section>
+</div>
+ 
+<?php }?> 
+
+
+<?php function draw_user_searched($userArray){
     $user=reset($userArray);
     ?>
     <header>
@@ -29,8 +69,11 @@
     <?php if($user['nome']!= null)
         ?>
         <h2>nome: <?=$user['nome']?></h2>
-
-    <h4>Username: <?=$user['username']?></h4>
+    <h4>Username:
+        <a class="link_2_user" href="../pages/user.php?username=<?=$user['username']?>">
+            <?=$user['username']?>
+        </a>
+    </h4>
     <h4>Email: <?=$user['email']?></h4>
     <h4>Born in: <?=$user['DataNascimento']?></h4>
 
@@ -45,16 +88,9 @@
     
    <?php }?>
 
-
-    
-
-
-    
     </body>
 </section>
  
-    
-
 <?php }?> 
 
 <?php function draw_comment_story_buttons($username){
@@ -72,7 +108,6 @@
             <?php                
                 $publications = getRecentPublicationsUser($username);
                 draw_stories($publications);
-                
             ?>
         </div>
     </div>

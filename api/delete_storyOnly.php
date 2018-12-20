@@ -14,8 +14,8 @@ else
     draw_header($_SESSION['username']);*/
  //$username=$story['username'];
 $username =$_SESSION['username'];
- echo $username;
-echo $storyid;
+// echo $username;
+//echo $storyid;
 deleteStory($storyid);
     
  //votesUp<?=$story['postID']

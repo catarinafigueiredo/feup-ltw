@@ -5,7 +5,8 @@ include_once('../templates/tpl_auth.php');
 
 session_start();
 draw_header(null);
-draw_message();
+
 draw_login();
+draw_message();
 draw_footer();
 ?>

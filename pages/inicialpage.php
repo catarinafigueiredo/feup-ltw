@@ -24,7 +24,7 @@ $stories= getAllStories();
 
 create_story();
 create_category();
-//draw_subscribe_category();
+draw_subscribe_category();
 //draw_unsubscribe_category();
 //draw_categories($categories);
 draw_order_buttons();

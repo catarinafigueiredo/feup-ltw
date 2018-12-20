@@ -12,7 +12,6 @@
                         <input class = "submit_b" type="submit" value="Login" >
                     </div>
                 </form>
-                <p style="text-align: center; margin-bottom: 1em"><a href="forgot_pw.php">Forgot Password?</a></p>
                 <footer class = "signupfooter">
                     <p style="margin:10px;">Não tens conta? <a href="signup.php">Cria uma!</a></p>
                     <p style="margin:10px;"><a href="inicialpage.php">Cancelar</a></p>

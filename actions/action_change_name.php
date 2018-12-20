@@ -10,6 +10,7 @@ if(validUserPassword($username,$password)){
     $db=Database::instance()->db();
     $stmt=$db->prepare('UPDATE user SET nome = ? WHERE username = ?');
     $stmt->execute(array($nome, $username));
+    $_SESSION['messages'][]=array('type'=>'success', 'content'=>'Changed name successfully!');
 }
 else{
     echo $username;

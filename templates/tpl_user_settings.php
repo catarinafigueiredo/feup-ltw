@@ -18,14 +18,14 @@
 
         <div class="settings_header">
             <header>    
-            <h2>Change Name and image</h2>
+            <h2>Change Password and image</h2>
             </header>
         </div>
 
     <body>
 
     <div class = "change_pwd_fieldcontainer">
-    <form method="post" action="../actions/action_change_name.php">
+    <form method="post" action="../actions/action_change_pwd.php">
         <div class = "change_pwd_field">
                 
                 <div>
@@ -41,8 +41,8 @@
                 <div>
                 <span class="span-boxes-settings"> Confirm New Password</span> 
                 </div>
-                    <input type="text" name="nome" value = <?=$user['nome']?>>
-                    <input style="padding: 1em;" class = "submit_b" type="submit" value="Save" >
+                <input type="password" name="newpasswordconf" required>
+                <input style="padding: 1em;" class = "submit_b" type="submit" value="Save" >
         </div>
     </form>
 
@@ -66,11 +66,11 @@
 
     <header>
         <div class="settings_header">
-            <h2>Change Password</h2>
+        <h2>Change Name</h2>
         </div>
     </header>
         <body>
-        <form method="post" action="../actions/action_change_pwd.php">
+        <form method="post" action="../actions/action_change_name.php">
         <div style ="justify-content: center;" class = "change_pwd_fieldcontainer">
             <div class = "change_pwd_field">
                 <div>
@@ -81,7 +81,7 @@
                 <div>
                     <span class="span-boxes-settings">Name</span>
                 </div>
-                <input type="password" name="newpasswordconf" required>
+                <input type="text" name="nome" value = <?=$user['nome']?>>
                 <input style="padding: 1em;" class = "submit_b" type="submit" value="Save" >
             </div>
         </div>  
@@ -115,6 +115,6 @@
     </form>        
     </body>
 
-    <div class = "break_line"></div>
+   
      
 <?php }?> 

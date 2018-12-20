@@ -17,7 +17,6 @@ else{
     header('Location:../pages/login.php');
 }
 
-echo $password;
-echo $email;
+
 
 ?>

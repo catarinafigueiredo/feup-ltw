@@ -36,10 +36,23 @@
     <header class="subs" id="subs" >
         
         <div class="Subscribe_cat"  id="Subscribe_cat">
-            <button class="button_subscribe"><p>Subscribe</p></button>
+            <input type="hidden" name="username" value="<?=$_SESSION['username']?>">
+        <form action="../api/subscribeCategory.php">
+        <?php 
+        $categories = getAllCategory();
+        foreach($categories as $category){ ?> 
+           <input type="checkbox" name="Category" value="<?=$category['CategoryName']?>"><?=$category['CategoryName']?><br>
+        <?php } ?> 
+        </form>
+           
         </div>
     </header> 
 <?php } ?>
+
+
+
+
+
 
 <?php function  draw_unsubscribe_category(){
     ?>

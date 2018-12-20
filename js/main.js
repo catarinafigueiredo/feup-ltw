@@ -198,19 +198,12 @@ if(btns){
             let order = current[0].querySelector('p').innerHTML;
             console.log(this.className);
             var x = document.getElementById("Subscribe_cat");
-            var Y = document.getElementById("UnSubscribe_cat");
             //checkIfValidOrder(order);
             //checkIfCategoryNotSubscribed(order);
-            if (order!="Recent" && order != "Oldest" && order !="Subscribed" && order !="Popular") {
-
-                // ver se order está subscrito
-               
-                
-                 
-
-               // x.style.display = "block";
+            if (order=="Subscribed" ) {
+                x.style.display = "flex";
             } else {
-               // x.style.display = "none";
+               x.style.display = "none";
             }
               
             

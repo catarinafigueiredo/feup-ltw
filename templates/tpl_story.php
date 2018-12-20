@@ -247,7 +247,7 @@
                         <button onclick="addcomment()"> 
                             <i class="fa fa-comment"></i></button>  
 
-                        <div id="comment_section"style="display: none;">
+                        <div class="comments_from_story" id="comment_section"style="display: none;">
                             <div class="new-comments">
                                 <form action="../actions/action_add_comment.php?story_id=<?=$story['postID']?>" method="post" id="new_comment_">
                                 <textarea name="comment" form="new_comment_" placeholder="Enter text here...">
@@ -321,7 +321,13 @@
     ?>
     
         <article class="comment">
-        <p>comment by <?=$comment['username']?></p>
+        <div class="story_first_comments">
+        <p>
+            Comment By 
+            <a class="link_2_user" href="../pages/user.php?username=<?=$comment['username']?>">
+                @<?=$comment['username']?>
+            </a>
+        <p>
         <p><?=nl2br($comment['Dados'])?></p>
 
         <div class="vote-toggle-comment">
@@ -359,7 +365,7 @@
             </div>
            
 
-
+        </div>
         </div>
        
         </article>
