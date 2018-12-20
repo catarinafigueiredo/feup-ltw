@@ -7,6 +7,7 @@ include_once('../templates/tpl_category.php');
 include_once('../database/db_story.php');
 include_once('../database/db_order.php');
 include_once('../database/db_category.php');
+include_once('../database/db_vote.php');
 
 // Verify if user is logged in
 if (!isset($_SESSION['username']))
@@ -14,14 +15,17 @@ if (!isset($_SESSION['username']))
 else
     draw_header($_SESSION['username']);
 
-
+    if(!isset($_SESSION['username'])){
+        header('Location:../pages/login.php');
+    }
+   
 $categories = getAllCategory();
 $stories= getAllStories();
 
 create_story();
 create_category();
-draw_subscribe_category();
-draw_unsubscribe_category();
+//draw_subscribe_category();
+//draw_unsubscribe_category();
 //draw_categories($categories);
 draw_order_buttons();
 

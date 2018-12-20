@@ -13,6 +13,11 @@ if (!isset($_SESSION['username']))
     draw_header(null);
 else
     draw_header($_SESSION['username']); 
+
+    if (!isset($_SESSION['username'])){
+        header('Location:../pages/login.php');
+    }
+
 $information= "%{$_GET['key_word']}%";
 $user = get_users_by_name($information);
 if(sizeof($user) >= 1)

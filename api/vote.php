@@ -17,8 +17,9 @@ else
     draw_header($_SESSION['username']);*/
 
 //$username=$story['username'];
-$username =$_SESSION['username'];
 
+
+  $username =$_SESSION['username'];
 
 if($type=="up"){
     
@@ -66,7 +67,7 @@ if($type=="up"){
 }
 $storyUp=getUpVotes($storyid);
 $storyDown=getDownVotes($storyid);
-draw_votes($storyid,$storyUp['up'],$storyDown['down']);
+draw_votes($username,$storyid,$storyUp['up'],$storyDown['down']);
 //votesUp<?=$story['postID']
 
 //header('Location: ../pages/inicialpage.php#votesUp?story_id=$storyid');

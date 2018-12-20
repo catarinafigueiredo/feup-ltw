@@ -4,6 +4,7 @@ include_once('../templates/tpl_common.php');
 include_once('../templates/tpl_auth.php');
 include_once('../templates/tpl_story.php');
 include_once('../database/db_story.php');
+include_once('../database/db_vote.php');
 
 $storyid= $_GET['story_id'];
 
@@ -19,11 +20,16 @@ $story = getStory($storyid);
 draw_one_story_only(reset($story));
 //create_comment();
 
-$comments = getAllComments($storyid);    
+  
 
-
-draw_comments($comments);
-
+?>
+<div class="TrycommentsTeste">
+    <?php
+    $comments = getAllComments($storyid);  
+    draw_comments($comments);
+?>
+</div> 
+<?php 
 //draw_stories($story);
 
 draw_footer();

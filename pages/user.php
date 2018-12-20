@@ -6,6 +6,7 @@ include_once('../templates/tpl_story.php');
 include_once('../database/db_users.php');
 include_once('../includes/session.php');
 include_once('../database/db_order.php');
+include_once('../database/db_vote.php');
 
 $username= $_GET['username'];
 // Verify if user is logged in

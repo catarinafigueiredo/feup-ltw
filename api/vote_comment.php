@@ -62,7 +62,7 @@ if($type=="up"){
 }
 $CommentsUp=getUpVotesComment($comment_id);
 $CommentsDown=getDownVotesComment($comment_id);
-draw_votes_comment($storyid,$comment_id,$CommentsUp['up'],$CommentsDown['down']);
+draw_votes_comment($username,$storyid,$comment_id,$CommentsUp['up'],$CommentsDown['down']);
 //votesUp<?=$story['postID']
 
 //header('Location: ../pages/inicialpage.php#votesUp?story_id=$storyid');

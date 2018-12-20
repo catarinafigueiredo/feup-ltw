@@ -37,17 +37,20 @@ if(isset($_SESSION['username'])){
                     draw_login();
                 }
 
-            break;
-        default:
-            
-            foreach($categories as $category){
-                if($order== $category['CategoryName'] ){
-                $i=1;
-            
-                $stories= getAllStoriesCat($category['CategoryName']);
-                draw_stories($stories);
-                }
+        break;
+    case 'Subscribed':
+        draw_stories(getSubscribedPublications($username));
+        break;
+    default:
+        
+        foreach($categories as $category){
+            if($order== $category['CategoryName'] ){
+            $i=1;
+        
+            $stories= getAllStoriesCat($category['CategoryName']);
+            draw_stories($stories);
             }
+        }
             if($i==0){
             draw_stories(getRecentPublications());}
             break;

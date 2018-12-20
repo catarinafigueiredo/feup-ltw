@@ -47,7 +47,7 @@
              foreach ($categories as $category) {?>
                  <button class="order-button"><p><?=array_values($category)[0]?></p></button>
              <?php } ?>
-            ?>  
+            
         </div>
         <div class="ordered-publications">
             <?php                
@@ -100,7 +100,7 @@
     
            <div class="vote-toggle">
                 <?php
-                    draw_votes($story['postID'],$story['up'],$story['down']);
+                   draw_votes($_SESSION['username'],$story['postID'],$story['up'],$story['down']);
                 ?>
                
             </div>
@@ -128,26 +128,43 @@
 
 <?php }?> 
 
-<?php function draw_votes($story_id,$storyUp,$storyDown){
+<?php function  draw_votes($username,$story_id,$storyUp,$storyDown){
     ?>
     <div class="votes">
         
             
-            <a id="voto">
+    <a id="voto">
             <input  type="hidden" name="story_id" value="<?=$story_id?>">
             <input  type="hidden" name="type" value="up">           
-            <i class="fa fa-thumbs-o-up"></i>
-        
+            
+            <input  type="hidden" name="type" value="up">   
+
+            <?php if (voteUp($story_id,$username) && !voteDown($story_id,$username)) {?>      
+            <i class="fa fa-thumbs-up"></i>
+            <?php } else {
+                ?>
+                <i class="fa fa-thumbs-o-up"></i>
+
+          <?php  }?>
+
             </a>
         
     </div>
+
     <div class="votes">
      
-            <a id="voto">
+    <a id="voto">
             <input  type="hidden" name="story_id" value="<?=$story_id?>">
             <input  type="hidden" name="type" value="down">
-            <i class="fa  fa-thumbs-o-down"></i>
-            </a>
+            
+
+            <?php if(voteDown($story_id,$username) && !voteUp($story_id,$username)){?>
+                <i class="fa  fa-thumbs-down"></i>
+           <?php }else{ ?>
+              <i class="fa fa-thumbs-o-down"></i>
+         <?php  } ?>
+
+    </a>
         
     </div>
     <p><?=$storyUp-$storyDown?></p>
@@ -155,7 +172,7 @@
 <?php } ?>
 
 
-<?php function draw_votes_comment($story_id,$comment_id,$commentUp,$commentDown){
+<?php function draw_votes_comment($username,$story_id,$comment_id,$commentUp,$commentDown){
     ?>
     <div class="votes-comment">
         
@@ -163,8 +180,14 @@
         <a id="voto-comment">
         <input  type="hidden" name="story_id" value="<?=$story_id?>">
         <input  type="hidden" name="type" value="up">       
-        <input  type="hidden" name="comment_id" value="<?=$comment_id?>">      
-        <i class="fa fa-thumbs-o-up"></i>
+        <input  type="hidden" name="comment_id" value="<?=$comment_id?>"> 
+        <?php if (voteUpComment($comment_id,$story_id,$username) && !voteDownComment($comment_id,$story_id,$username)) {?>      
+            <i class="fa fa-thumbs-up"></i>
+            <?php } else {
+                ?>
+                <i class="fa fa-thumbs-o-up"></i>
+
+          <?php  }?>  
     
         </a>
         
@@ -174,8 +197,12 @@
         <a id="voto-comment">
         <input  type="hidden" name="story_id" value="<?=$story_id?>">
         <input  type="hidden" name="type" value="down">
-        <input  type="hidden" name="comment_id" value="<?=$comment_id?>">      
-        <i class="fa  fa-thumbs-o-down"></i>
+        <input  type="hidden" name="comment_id" value="<?=$comment_id?>">    
+        <?php if(voteDownComment($comment_id,$story_id,$username) && !voteUpComment($comment_id,$story_id,$username)){?>
+                <i class="fa  fa-thumbs-down"></i>
+           <?php }else{ ?>
+              <i class="fa fa-thumbs-o-down"></i>
+         <?php  } ?>  
         </a>
     
     </div>
@@ -210,11 +237,10 @@
                             </div>
                             <p><?=nl2br($story['Dados'])?></p>     
                         </div>
-                
                     <div class = "story_footer2">
                         <div class="vote-toggle">
                             <?php
-                            draw_votes($story['postID'],$story['up'],$story['down']);
+                            draw_votes($_SESSION['username'],$story['postID'],$story['up'],$story['down']);
                             ?>
                         </div>
 
@@ -278,7 +304,7 @@
 
 <?php function draw_comments($comments){
     ?>
-    <section id="commentsStory">
+    <div class="commentsStoryDisplay">
         <?php
         foreach ($comments as $comment) {
         draw_comment($comment);
@@ -286,7 +312,7 @@
         ?>
 
 
-    </section>
+    </div>
 
 <?php }?>
 
@@ -300,7 +326,7 @@
 
         <div class="vote-toggle-comment">
                 <?php
-                    draw_votes_comment($comment['PostID'],$comment['CommentID'],$comment['up'],$comment['down']);
+                     draw_votes_comment($_SESSION['username'],$comment['PostID'],$comment['CommentID'],$comment['up'],$comment['down']);
                 ?>
                
         </div>
@@ -308,16 +334,17 @@
         
         <?php if(checkIfUserisLogged($_SESSION['username'],$comment['username'])){
             ?>
-            <div class="trash can">
-                <a href="../api/delete_comment.php?story_id=<?=$comment['PostID']?>&comment_id=<?=$comment['CommentID']?>">
+            <div class="trash-can-comment">
+                <a id="trash-can-comment">
+                <input  type="hidden" name="story_id" value="<?=$comment['PostID']?>">
+                <input  type="hidden" name="comment_id" value="<?=$comment['CommentID']?>">  
                 <i class="fa fa-trash"></i>
                 </a>
             </div>
 
         <?php }?>
         
-        <div class="comment_button"> 
-                <i class="fa fa-comment"></i></div>  
+       
 
         <div class= "comment_comment" style="display: none;" >
 
