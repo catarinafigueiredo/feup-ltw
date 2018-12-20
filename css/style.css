@@ -408,7 +408,8 @@ background: #555;
     background:#c5c5c7;
     width: 800px;  
     border-radius: 25px;
-    margin: 1em;   
+    padding: 1em;
+      
     border: 8px solid #888;
 }
 
@@ -434,6 +435,7 @@ background: #555;
 
 .story_content{
     background: #dfdddd;
+    padding: 1em;
 }
 
 .story_footer{

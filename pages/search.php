@@ -6,6 +6,7 @@ include_once('../templates/tpl_story.php');
 include_once('../templates/tpl_category.php');
 include_once('../database/db_story.php');
 include_once('../database/db_users.php');
+include_once('../database/db_vote.php');
 include_once('../database/db_category.php');
 
 // Verify if user is logged in

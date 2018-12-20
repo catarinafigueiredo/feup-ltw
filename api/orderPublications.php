@@ -3,6 +3,7 @@ include_once('../includes/session.php');
 include_once('../database/db_order.php');
 include_once('../templates/tpl_story.php');
 include_once('../templates/tpl_auth.php');
+include_once('../database/db_vote.php');
 include_once('../database/db_category.php');
 
 if(isset($_SESSION['username'])){
