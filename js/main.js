@@ -102,18 +102,14 @@ trash_cans.forEach((trash_can)=> trash_can.addEventListener('click',deleteStory)
             
            
             let parent= event.target.parentElement;
-            //console.log(parent);
+
             let story_id= parent.querySelector('input[name=story_id]').value;
             let type=order;
             let request= new XMLHttpRequest();
             request.open('POST','../api/delete_story.php',true);
             request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
             request.addEventListener('load',function(){
-                 // console.log(document.getElementsByClassName("order-button active").innerText);
-                
-                //let order= isso.querySelector('p').value;
-                
-                //console.log(order);
+     
                 let Storys= document.querySelector('div.ordered-publications');
                 let Storys1= document.querySelector('div.comments-storys');
                console.log(Storys);
@@ -142,9 +138,6 @@ if(btnsSubs){
     for (var i =0; i< btnsSubs.length; i++) {
         btnsSubs[i].addEventListener("click",function(){
             var current= document.getElementsByClassName("active");
-            //current[0].className= current[0].className.replace(" active", "");
-            //this.className +=" active";
-            //console.log(this.className);
             let order = current[0].querySelector('p').innerHTML;
             console.log(order);
             let request = new XMLHttpRequest();
@@ -176,12 +169,6 @@ for(var i=0; i < comments_comments.length;i++){
 }
 function checkIfValidOrder($order){
     var categories = getAllCategory();
-    /*foreach($categories as $category){
-        if($order== $category['CategoryName'] ){
-        subscribeCategory($_SESSION['username'],$category['CategoryName']);
-        
-        }
-    }*/
     console.log(categories);
 }
 
@@ -198,8 +185,6 @@ if(btns){
             let order = current[0].querySelector('p').innerHTML;
             console.log(this.className);
             var x = document.getElementById("Subscribe_cat");
-            //checkIfValidOrder(order);
-            //checkIfCategoryNotSubscribed(order);
             if (order=="Subscribed" ) {
                 x.style.display = "flex";
             } else {

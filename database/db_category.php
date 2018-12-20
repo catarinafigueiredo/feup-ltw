@@ -50,4 +50,17 @@ function  subscribeCategory($username,$category){
     return $stmt->fetchAll();
 
 }
+
+function  ifsubscribeCategory($username,$category){
+    $db=Database::instance()->db();
+    $stmt= $db->prepare('SELECT * FROM SubscribeCategory where username=?  and CategoryName = ?');
+    $stmt->execute(array($username,$category));
+    $user= $stmt->fetch();
+    if( empty($user)){
+           return false;
+       }else{   
+            return true;
+       }
+
+}
 ?>

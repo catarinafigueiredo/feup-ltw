@@ -40,8 +40,21 @@
         <form action="../api/subscribeCategory.php">
         <?php 
         $categories = getAllCategory();
-        foreach($categories as $category){ ?> 
-           <input type="checkbox" name="Category" value="<?=$category['CategoryName']?>"><?=$category['CategoryName']?><br>
+        foreach($categories as $category){  
+            $i=0;
+            if(ifsubscribeCategory($_SESSION['username'],$category['CategoryName'])){
+                
+                ?>
+                <input class="subscribe_cat_cat" type="checkbox" name="Category" value="<?=$category['CategoryName']?>" checked ><?=$category['CategoryName']?><br>
+
+            <?php }else{ ?>
+               
+                <input  class="subscribe_cat_cat" type="checkbox" name="Category" value="<?=$category['CategoryName']?>"  ><?=$category['CategoryName']?><br>
+
+            <?php  } ?> 
+            
+
+           
         <?php } ?> 
         </form>
            
